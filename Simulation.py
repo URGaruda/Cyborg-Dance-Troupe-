@@ -1,32 +1,45 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import random
 import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+import random
 
-def matriceCarre(n):
-    return [[ 0 for j in range(n)] for i in range(n)]
-    
-def deplacementPossible(x,y,t):
-        if x < 0 or x >= len(t) or y < 0 or y >= len(t) or t[x][y] != 0:
+# taille de la fenetre (carrée)
+larg, long = 10, 10
+
+# figure et limites des axes x et y
+fig, ax = plt.subplots()
+ax.set_xlim(0, larg)
+ax.set_ylim(0, long)
+
+
+def deplacement_possible(x,y,taille,liste_obstacle):
+        if x < 0 or x >= taille or y < 0 or y >= taille or (x,y) in liste_obstacle :
             return False 
         else:
             return True
+def creer_obstacle(n):
+    l=[]
+    for i in range(n):
+        l.append((random.randint(0,larg),(random.randint(0,long))))
+    return l 
+lo=creer_obstacle(60) # liste d'obstacle  
+
+def affiche_obstacle(l):
+    for x,y in l:
+        plt.scatter(x,y,c='r')   
+         
 class Robot:
-    def __init__(self,x,y,nom):
+    def __init__(self,x,y):
         self.x=x
         self.y=y
-        self.nom=nom
-        self.positions = [] # Ajout d'une liste pour stocker les positions précédentes
-         
-    def deja_vu(self,x,y):
-        for p in self.positions : 
-            pos_x,pos_y=p 
-            if pos_x==x and pos_y==y :
-                return True 
-        return False 
-        
-    def avancer(self,t):
+        # créer le point qui représente le robot
+        self.scat=ax.scatter(self.x, self.y)
+    
+
+    
+    def avancer(self):
         direction_v = random.choice(["haut", "bas","rien"])
         direction_h = random.choice(["gauche", "droite","rien"])
         pos_x=self.x
@@ -41,35 +54,23 @@ class Robot:
         else :
             if direction_v=="bas":
                 pos_y+=1
-        if(deplacementPossible(pos_x,pos_y,t)) :
+        if(deplacement_possible(pos_x,pos_y,long,lo)) :
             self.x=pos_x
             self.y=pos_y
-            
-        self.positions.append((self.x, self.y)) # Ajout de la position courante dans la liste
-        
 
-    def affichage(self):
-        for position in self.positions:# afficher toutes les positions précédentes e
-            plt.scatter(position[0], position[1], c='b')
-        plt.scatter(self.x, self.y, c='r') # Afficher la position actuelle en rouge
-        plt.title("Position de robot")
-        plt.show()
-        
-    def simulation(n):
-        t = matriceCarre(n)
-        robot = Robot(0,0, "barry")
-        for i in range(n):
-            robot.avancer(t)
-            
-        robot.affichage()
-        print("Voici les positions du robots ",robot.positions)
-        print("Position actuelle: x =", robot.x, "y =", robot.y)
+        # changer la position du point
+        self.scat.set_offsets([[self.x, self.y]])
 
-def simulations(k,n): # realise un ensemble k de simulations sur un matrice de taille n 
-    for i in range(k):
-        Robot.simulation(n)
-simulations(5,20)
-#Robot.simulation(20)
+    
+
+# simulation
+cyborg = Robot(larg/2,long/2)
+def update(frame):
+    cyborg.avancer()
+affiche_obstacle(lo)
+ani = animation.FuncAnimation(fig, update, frames=range(100), repeat=False, interval=700)
+plt.show()
+
 
 
 
