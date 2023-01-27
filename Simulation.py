@@ -36,6 +36,11 @@ class Robot:
         self.y=y
         # créer le point qui représente le robot
         self.scat=ax.scatter(self.x, self.y)
+class Roue:
+    def __init__(self,x,y):
+        self.x=x
+        self.y=y
+
     
 
     
