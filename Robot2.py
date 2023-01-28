@@ -18,6 +18,11 @@ class Robot :
         
     def stop(self):
         self.v=0.0
+    
+    def acceleration(self,val):
+        self.v+=val
+    def freinage(self,val):
+        self.v-=val
         
 #tester la classe        
 try:
