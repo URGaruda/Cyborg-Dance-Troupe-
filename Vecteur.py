@@ -1,5 +1,7 @@
 #Ajoute le module copy pour la méthode copie
 import copy
+import math
+
 class Vecteur:
     def __init__(self, x, y):
         self.x = x
@@ -22,6 +24,9 @@ class Vecteur:
         self.x -= x
         self.y -= y
     return self
+
+    def norme(self):
+        return math.sqrt(self.x**2 + self.y**2)
 
     #Creation d'une methode copie
     def copie(self,vecteur):
