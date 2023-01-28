@@ -63,4 +63,6 @@ v1.soustraction(vecteur=v2)
 print(v1.x,",",v1.y)
 v3=v1.copie(v2)
 print(v3.x,",",v3.y)
-    
+v1=v1.mult_par_un_scalaire(v1,5)  
+print(" ")
+print(v1.x,",",v1.y)
