@@ -7,15 +7,17 @@ class Robot :
             raise ValueError("La vitesse doit etre entre 0 et {} ".format(Robot.VMAX))
         if theta < 0 or theta > 360:
             raise ValueError("L'angle doit être entre 0 et 360 degrés")
-        self.x = x
-        self.y = y
-        self.v = v
-        self.R = R
-        self.theta = theta
+        self.x = x  #coordonnée x du robot
+        self.y = y  #coordonnée y du robot 
+        self.v = v  #vitesse du robot 
+        self.R = R  #Rayon du robot 
+        self.theta = theta #angle de vue du robot 
         new_dir=Vecteur(dirX-x,dirY-y)
         norme_dir=new_dir.norme()
-        self.dir=Vecteur((new_dir.x/norme_dir),(new_dir.y/norme_dir))
+        self.dir=Vecteur((new_dir.x/norme_dir),(new_dir.y/norme_dir)) #direction du robot 
         
+    def stop(self):
+        self.v=0.0
         
 #tester la classe        
 try:
