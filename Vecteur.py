@@ -1,3 +1,5 @@
+#Ajoute le module copy pour la méthode copie
+import copy
 class Vecteur:
     def __init__(self, x, y):
         self.x = x
@@ -21,10 +23,16 @@ class Vecteur:
         self.y -= y
     return self
 
+    #Creation d'une methode copie
+    def copie(self,vecteur):
+        new_vecteur= copy.copy(vecteur)
+        return new_vecteur 
+
 v1 = Vecteur(1, 2)
 v2 = Vecteur(3, 4)
 v1.addition(x=1, y=1) 
 v1.addition(vecteur=v2)
 v1.soustraction(x=1,y=1)
 v1.soustraction(vecteur=v2)
+v1.copie(v2)
     
