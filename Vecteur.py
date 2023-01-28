@@ -26,7 +26,7 @@ class Vecteur:
         return self
 
     def norme(self):
-        return math.sqrt(self.x**2 + self.y**2)
+        return math.sqrt((self.x**2) + (self.y**2))
 
     def p_scalaire(self,vecteur):
         return self.x*vecteur.x+self.y*vecteur.y
@@ -51,7 +51,8 @@ class Vecteur:
         self.x=x
         self.y=y
     def angle_rotation(self,vecteur): # angle est dans l'intervalle 0 PI 
-        return math.acos(self.p_scalaire(vecteur)/vecteur.norme()*self.norme())
+        val=self.p_scalaire(vecteur)/(vecteur.norme()*self.norme())
+        return math.acos(val)
 v1 = Vecteur(1, 2)
 v2 = Vecteur(3, 4)
 v1.addition(x=1, y=1) 
@@ -59,4 +60,5 @@ v1.addition(vecteur=v2)
 v1.soustraction(x=1,y=1)
 v1.soustraction(vecteur=v2)
 v1.copie(v2)
+print(v1.angle_rotation(v2))
     
