@@ -5,7 +5,7 @@ class Vecteur:
         self.x = x
         self.y = y
         
-     def addition(self, x=None, y=None, vecteur=None):
+    def addition(self, x=None, y=None, vecteur=None):
         if vecteur:
             self.x += vecteur.x
             self.y += vecteur.y
@@ -15,19 +15,24 @@ class Vecteur:
         return self 
     
     def soustraction(self, x=None, y=None, vecteur=None):
-    if vecteur:
-        self.x -= vecteur.x
-        self.y -= vecteur.y
-    else:
-        self.x -= x
-        self.y -= y
-    return self
+        if vecteur:
+            self.x -= vecteur.x
+            self.y -= vecteur.y
+        else:
+            self.x -= x
+            self.y -= y
+        return self
 
     #Creation d'une methode copie
     def copie(self,vecteur):
         new_vecteur= copy.copy(vecteur)
-        return new_vecteur 
+        return new_vecteur
 
+
+    def mult_par_un_scalaire(self,vecteur, k):
+        vecteur.x=k*(vecteur.x)
+        vecteur.y=k*(vecteur.y)
+        return vecteur
 v1 = Vecteur(1, 2)
 v2 = Vecteur(3, 4)
 v1.addition(x=1, y=1) 
