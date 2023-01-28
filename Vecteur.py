@@ -47,7 +47,7 @@ class Vecteur:
     def rotation (self,angle):
         angle= math.radians(angle)
         x= self.x * math.cos(angle) - self.y * math.sin(angle)
-        y= self.x * math.sin(angle) - self.y * math.cos(angle)
+        y= self.x * math.sin(angle) + self.y * math.cos(angle)
         self.x=x
         self.y=y
 
