@@ -11,3 +11,13 @@ class Vecteur:
             self.x += x
             self.y += y
         return self 
+    
+    def soustraction(self, x=None, y=None, vecteur=None):
+    if vecteur:
+        self.x -= vecteur.x
+        self.y -= vecteur.y
+    else:
+        self.x -= x
+        self.y -= y
+    return self
+    
