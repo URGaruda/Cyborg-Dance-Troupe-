@@ -1,5 +1,5 @@
-VMAX= 50
 class Robot :
+    VMAX= 50 
     def  __init__(self , x , y, v ,  R , theta , direction):
         if v<0 or v>VMAX:
             raise ValueError("La vitesse doit etre entre 0 et {} ".format(VMAX))
