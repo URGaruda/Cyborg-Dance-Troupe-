@@ -28,6 +28,9 @@ class Vecteur:
     def norme(self):
         return math.sqrt(self.x**2 + self.y**2)
 
+    def p_scalaire(self,vecteur):
+        return self.x*vecteur.x+self.y*vecteur.y
+
     #Creation d'une methode copie
     def copie(self,vecteur):
         new_vecteur= copy.copy(vecteur)
