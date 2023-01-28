@@ -30,6 +30,8 @@ try:
     print(robot.dir.x,",",robot.dir.y)  
     robot.stop()
     print(robot.v)
+    robot.acceleration(30)
+    print(robot.v)
     
 except ValueError as erreur :
     print(erreur) 
