@@ -30,6 +30,9 @@ class Vecteur:
 
     def p_scalaire(self,vecteur):
         return self.x*vecteur.x+self.y*vecteur.y
+    
+    def angle(self):
+        return math.atan2(self.y, self.x)
 
     #Creation d'une methode copie
     def copie(self,vecteur):
