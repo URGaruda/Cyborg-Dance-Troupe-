@@ -12,8 +12,9 @@ class Robot :
         self.v = v
         self.R = R
         self.theta = theta
-        norme_dir=math.sqrt((dirX**2)+(dirY))
-        self.dir=Vecteur((dirX/norme_dir),(dirY/norme_dir))
+        new_dir=Vecteur(dirX-x,dirY-y)
+        norme_dir=new_dir.norme()
+        self.dir=Vecteur((new_dir.x/norme_dir),(new_dir.y/norme_dir))
         
         
 #tester la classe        
