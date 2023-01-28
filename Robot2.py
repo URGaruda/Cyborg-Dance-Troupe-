@@ -1,6 +1,6 @@
 VMAX= 50
 class Robot :
-    def  __init__(self , x , y, v ,  R , theta):
+    def  __init__(self , x , y, v ,  R , theta , direction):
         if v<0 or v>VMAX:
             raise ValueError("La vitesse doit etre entre 0 et {} ".format(VMAX))
         if theta < 0 or theta > 360:
@@ -12,8 +12,7 @@ class Robot :
         self.theta = theta
         
         
-        
-        
+#tester la classe        
 try:
     robot=Robot(1,1,20,10,50)   
 except valueError as erreur :
