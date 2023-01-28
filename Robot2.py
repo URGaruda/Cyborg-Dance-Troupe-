@@ -28,6 +28,13 @@ class Robot :
 try:
     robot=Robot(1,1,20,10,50,5,3) 
     print(robot.dir.x,",",robot.dir.y)  
+    robot.stop()
+    print(robot.v)
+    
 except ValueError as erreur :
     print(erreur) 
+    robot.stop()
+    print(robot.v)
+    robot.acceleration(30)
+    print(robot.v)
 
