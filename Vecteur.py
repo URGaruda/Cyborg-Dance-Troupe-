@@ -20,4 +20,11 @@ class Vecteur:
         self.x -= x
         self.y -= y
     return self
+
+v1 = Vecteur(1, 2)
+v2 = Vecteur(3, 4)
+v1.addition(x=1, y=1) 
+v1.addition(vecteur=v2)
+v1.soustraction(x=1,y=1)
+v1.soustraction(vecteur=v2)
     
