@@ -50,7 +50,8 @@ class Vecteur:
         y= self.x * math.sin(angle) + self.y * math.cos(angle)
         self.x=x
         self.y=y
-
+    def angle_rotation(self,vecteur): # angle est dans l'intervalle 0 PI 
+        return math.acos(self.p_scalaire(vecteur)/vecteur.norme()*self.norme())
 v1 = Vecteur(1, 2)
 v2 = Vecteur(3, 4)
 v1.addition(x=1, y=1) 
