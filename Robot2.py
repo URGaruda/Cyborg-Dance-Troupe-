@@ -32,6 +32,8 @@ try:
     print(robot.v)
     robot.acceleration(30)
     print(robot.v)
+    robot.freinage(15)
+    print(robot.v)
     
 except ValueError as erreur :
     print(erreur) 
