@@ -41,6 +41,15 @@ class Vecteur:
         vecteur.x=k*(vecteur.x)
         vecteur.y=k*(vecteur.y)
         return vecteur
+    
+        
+    def rotation (self,angle):
+        angle= math.radians(angle)
+        x= self.x * math.cos(angle) - self.y * math.sin(angle)
+        y= self.x * math.sin(angle) - self.y * math.cos(angle)
+        self.x=x
+        self.y=y
+
 v1 = Vecteur(1, 2)
 v2 = Vecteur(3, 4)
 v1.addition(x=1, y=1) 
