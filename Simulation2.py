@@ -14,5 +14,6 @@ class Simulation :
     def colision(self):
         for obj in self.liste_obstacle :
             if not ( Vecteur.p_scalaire(Vecteur(self.dexter.x,self.dexter.y),Vecteur(obj.x,obj.y)) > self.dexter.R + obj.R ) : # si y'a colision iol renvoie vrai 
+                self.dexter.stop()
                 return True
         return False 
