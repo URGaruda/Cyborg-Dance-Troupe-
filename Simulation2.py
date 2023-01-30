@@ -12,6 +12,7 @@ class Simulation :
         self.pas_temps=temps
     
     def colision(self):
+        """ Determine si le Robot Dexter est où pas en collision avec un des obstacles du terrain """
         for obj in self.liste_obstacle :
             print("j'y fus")
             if not(math.sqrt(((obj.x-self.dexter.x)**2)+((obj.y-self.dexter.y)**2)) > obj.R+self.dexter.R): # si y'a colision il renvoie vrai 
