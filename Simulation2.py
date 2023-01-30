@@ -1,7 +1,12 @@
 import math
 from Vecteur import Vecteur
 from Robot2 import Robot 
-from Obstacle import Obstacle
+
+class Obstacle : 
+    def __init__(self,x,y,R):
+        self.x=x
+        self.y=y
+        self.R=R
 
 class Simulation : 
     Ymax=400.0 #en cm
