@@ -24,4 +24,12 @@ class Simulation :
                 self.dexter.stop()
                 return True
         return False 
+    def hors_terrain(self):
+        if(self.dexter.x<0 or self.dexter.x >= Simulation.Xmax or self.dexter.y < 0 or self.dexter.y >= Simulation.Ymax ):
+            return True 
+        return False 
+
+    def simulation_carre(self,dist):
+        """ Fait faire un carré au robot de la distance "dist" au robot sur le terrain (0.0,Xmax) en x et (0.0,Ymax) """
+
 
