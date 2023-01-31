@@ -51,7 +51,7 @@ class Vecteur:
         self.x=x
         self.y=y
 
-v1 = Vecteur(1, 2)
+"""v1 = Vecteur(1, 2)
 v2 = Vecteur(3, 4)
 v1.addition(x=1, y=1) 
 print(v1.x,",",v1.y)
@@ -65,4 +65,12 @@ v3=v1.copie(v2)
 print(v3.x,",",v3.y)
 v1=v1.mult_par_un_scalaire(v1,5)  
 print(" ")
-print(v1.x,",",v1.y)
+print(v1.x,",",v1.y)"""
+v4=Vecteur(3.0,2.0)
+v4.rotation(math.pi/2)
+#print(math.radians(math.pi/2))
+print(v4.x,",",v4.y)
+v4.rotation(-(math.pi/2))
+print(v4.x,",",v4.y)
+"""v4.rotation(math.pi/2)
+print(v4.x,",",v4.y)"""
