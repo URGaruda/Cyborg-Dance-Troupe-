@@ -45,7 +45,6 @@ class Vecteur:
     
         
     def rotation (self,angle):
-        angle= math.radians(angle)
         x= self.x * math.cos(angle) - self.y * math.sin(angle)
         y= self.x * math.sin(angle) + self.y * math.cos(angle)
         self.x=x
@@ -53,7 +52,7 @@ class Vecteur:
     def angle_rotation(self,vecteur): # angle est dans l'intervalle 0 PI 
         val=self.p_scalaire(vecteur)/(vecteur.norme()*self.norme())
         return math.acos(val)
-v1 = Vecteur(1, 2)
+"""v1 = Vecteur(1, 2)
 v2 = Vecteur(3, 4)
 v3 = Vecteur(8,14)
 v1.addition(x=1, y=1)
@@ -63,5 +62,9 @@ v1.soustraction(vecteur=v2)
 v1.copie(v2)
 print(v1.angle_rotation(v2))
 print(v3.angle_rotation(v1))
-print(v2.angle_rotation(v3))
-    
+print(v2.angle_rotation(v3))"""
+v4=Vecteur(3,2)
+v4.rotation(math.pi/2)
+print(v4.x,",",v4.y)
+v4.rotation(math.pi/2)
+print(v4.x,",",v4.y)
