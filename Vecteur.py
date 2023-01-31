@@ -44,11 +44,19 @@ class Vecteur:
         return vecteur
     
         
-    def rotation (self,angle):
+    def rotation_anti_horaire (self,angle):
+        """ Rotation anti-horaire d'angle "angle" en radians """
         x= self.x * math.cos(angle) - self.y * math.sin(angle)
         y= self.x * math.sin(angle) + self.y * math.cos(angle)
         self.x=x
         self.y=y
+    def rotation_horaire (self,angle):
+        """ Rotation horaire d'angle "angle" en radians """
+        x= self.x * math.cos(angle) + self.y * math.sin(angle)
+        y= - self.x * math.sin(angle) + self.y * math.cos(angle)
+        self.x=x
+        self.y=y
+    
     def angle_rotation(self,vecteur): # angle est dans l'intervalle 0 PI 
         val=self.p_scalaire(vecteur)/(vecteur.norme()*self.norme())
         return math.acos(val)
