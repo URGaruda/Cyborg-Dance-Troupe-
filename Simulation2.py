@@ -1,4 +1,5 @@
 import math
+import time 
 from Vecteur import Vecteur
 from Robot2 import Robot 
 
@@ -16,12 +17,10 @@ class Simulation :
         self.liste_obstacle=obstacle
         self.pas_temps=temps
     
-    def colision(self):
+    def colision(self,vect):
         """ Determine si le Robot Dexter est où pas en collision avec un des obstacles du terrain """
         for obj in self.liste_obstacle :
-            print("j'y fus")
-            if not(math.sqrt(((obj.x-self.dexter.x)**2)+((obj.y-self.dexter.y)**2)) > obj.R+self.dexter.R): # si y'a colision il renvoie vrai 
-                self.dexter.stop()
+            if not(math.sqrt(((obj.x-vect.x)**2)+((obj.y-vect.y)**2)) > obj.R+vect.R): # si y'a colision il renvoie vrai 
                 return True
         return False 
     def hors_terrain(self):
@@ -29,7 +28,28 @@ class Simulation :
             return True 
         return False 
 
-    def simulation_carre(self,dist):
+    def simulation_carre(self,pas):
         """ Fait faire un carré au robot de la distance "dist" au robot sur le terrain (0.0,Xmax) en x et (0.0,Ymax) """
+        for i in range(4):
+            for j in range(pas):
+                vect_v=self.dexter.dir.mult_par_un_scalaire(self.dexter.dir,(self.dexter.v/self.pas_temps))
+                self.dexter.x=vect_v.x
+                self.dexter.y=vect_v.y
+                if(self.hors_terrain()):
+                    print("Dexter est sorti du terrain")
+                    return 
+                if(self.colision):
+                    print("Il y a eu collision")
+                    return 
+                time.sleep(0.5)
+            self.dexter.dir.rotation(math.pi/2)
+            time.sleep(2)
+        
+
+
+            
+            
+
+
 
 
