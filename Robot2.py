@@ -1,4 +1,5 @@
 import math
+import copy
 from Vecteur import Vecteur 
 class Robot :
     VMAX= 50 
@@ -15,13 +16,22 @@ class Robot :
         new_dir=Vecteur(dirX-x,dirY-y)
         norme_dir=new_dir.norme()
         self.dir=Vecteur((new_dir.x/norme_dir),(new_dir.y/norme_dir)) #direction du robot 
-        
+
+    def copie(self):
+        """Fait une copie du robot """
+        robot=copy.copy(self)
+        return robot
+
     def stop(self):
+        """ Met la vitesse du robot à 0 pour l'arrêter """
         self.v=0.0
-    
+
     def acceleration(self,val):
+        """ Augmente la vitesse v du robot d'une valeur val """
         self.v+=val
+
     def freinage(self,val):
+        """ Reduit la vitesse v du robot d'une valeur val """
         self.v-=val
         
 #tester la classe        
@@ -34,6 +44,10 @@ try:
     print(robot.v)
     robot.freinage(15)
     print(robot.v)
+    robot2=robot.copie()
+    print("c'est la copie")
+    print(robot2.v)
+    print(robot.dir.x,",",robot.dir.y) 
     
 except ValueError as erreur :
     print(erreur) 
@@ -41,4 +55,6 @@ except ValueError as erreur :
     print(robot.v)
     robot.acceleration(30)
     print(robot.v)
+
+
 
