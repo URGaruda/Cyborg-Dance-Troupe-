@@ -62,6 +62,7 @@ class Simulation :
                 time.sleep(0.5)
             self.dexter.dir.rotation_anti_horaire(math.pi/2)
             time.sleep(2)
+        print("simulation fini")
         
 
 
