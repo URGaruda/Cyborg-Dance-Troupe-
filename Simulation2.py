@@ -25,7 +25,7 @@ class Simulation :
         return False 
     def hors_terrain(self,robot):
         """ Prends un robot et vérifie s'il est toujours sur le terrain """
-        if(robot.x<0 or robot.x >= Simulation.Xmax or robot.y < 0 or robot.y >= Simulation.Ymax ):
+        if(robot.x<0.0 or robot.x >= Simulation.Xmax or robot.y < 0.0 or robot.y >= Simulation.Ymax ):
             return True 
         return False 
     def senseur(self):
@@ -42,29 +42,54 @@ class Simulation :
                 return pas 
         return -1 
 
-
+    def affichage(self):
+        print("+", end='')
+        for j in range(int(self.Ymax)+1):
+            print("-", end='')
+        print("+\n")
+        for i in range(int(self.Xmax)+1):
+            print("|", end='')
+            #for j in range(self.Ymax):
+            print("|\n")
+        print("+", end='')
+        for j in range(int(self.Ymax)+1):
+            print("-", end='')
+        print("+\n")
     def simulation_carre(self,pas):
         """ Fait faire un carré au robot de la distance "dist" au robot sur le terrain (0.0,Xmax) en x et (0.0,Ymax) """
+        print("ok")
         for i in range(4):
             for j in range(pas):
+                print("ok")
                 vect_v=self.dexter.dir.mult_par_un_scalaire(self.dexter.dir,(self.dexter.v/self.pas_temps))
                 self.dexter.x=vect_v.x
                 self.dexter.y=vect_v.y
-                if(self.hors_terrain()):
+                """if(self.hors_terrain(self.dexter)):
                     print("Dexter est sorti du terrain")
-                    return 
-                if(self.collision):
+                    return
+                """ 
+                if(self.collision(Vecteur(self.dexter.x,self.dexter.y ))):
                     print("Il y a eu collision")
                     return 
-                if(self.senseur()<=2):
+                if(self.senseur()==1):
+                    print("Obstacle à proximité")
                     time.sleep(1)
                     break 
                 time.sleep(0.5)
             self.dexter.dir.rotation_anti_horaire(math.pi/2)
             time.sleep(2)
         print("simulation fini")
-        
-
+for i in [] :
+    print("aaah")
+#tester la classe        
+try:
+    sim=Simulation(104.29,145.96,2,56,24,0.10,[])
+except ValueError as erreur :
+    print(erreur)    
+def update():
+    sim=Simulation(8.29,4.96,4.2,3,2,0.10,[])
+    sim.simulation_carre(10)
+update()
 
             
             
