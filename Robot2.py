@@ -33,7 +33,9 @@ class Robot :
     def freinage(self,val):
         """ Reduit la vitesse v du robot d'une valeur val """
         self.v-=val
-        
+
+
+"""
 #tester la classe        
 try:
     robot=Robot(1,1,20,10,50,5,3) 
@@ -55,6 +57,6 @@ except ValueError as erreur :
     print(robot.v)
     robot.acceleration(30)
     print(robot.v)
-
+"""
 
 

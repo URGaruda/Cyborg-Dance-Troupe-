@@ -70,10 +70,10 @@ v1.soustraction(vecteur=v2)
 v1.copie(v2)
 print(v1.angle_rotation(v2))
 print(v3.angle_rotation(v1))
-print(v2.angle_rotation(v3))"""
+print(v2.angle_rotation(v3))
 v4=Vecteur(3,2)
 v4.rotation(math.pi/2)
 print(v4.x,",",v4.y)
 v4.rotation(math.pi/2)
 print(v4.x,",",v4.y)
-print((v4.mult_par_un_scalaire(v4,5)).y)
+print((v4.mult_par_un_scalaire(v4,5)).y)"""
