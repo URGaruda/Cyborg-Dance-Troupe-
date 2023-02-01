@@ -20,9 +20,8 @@ class Simulation :
     def collision(self,vect):
         """ Determine si le Robot Dexter est où pas en collision avec un des obstacles du terrain """
         for obj in self.liste_obstacle :
-            if not(math.sqrt(((obj.x-vect.x)**2)+((obj.y-vect.y)**2)) > obj.R+vect.R): # si y'a colision il renvoie vrai 
-                return True
-        return False 
+            return not(math.sqrt(((obj.x-vect.x)**2)+((obj.y-vect.y)**2)) > obj.R+vect.R): # si y'a colision il renvoie vrai 
+    
     def hors_terrain(self,robot):
         """ Prends un robot et vérifie s'il est toujours sur le terrain """
         if(robot.x<0.0 or robot.x >= Simulation.Xmax or robot.y < 0.0 or robot.y >= Simulation.Ymax ):
