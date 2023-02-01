@@ -61,7 +61,7 @@ class Simulation :
         print(self.dexter.dir.x,",",self.dexter.dir.y)
         for i in range(4):
             direction=self.dexter.dir.copie(self.dexter.dir)
-            vect_v=self.dexter.dir.mult_par_un_scalaire(direction,(self.dexter.v*self.pas_temps))
+            vect_v=self.dexter.dir.mult_par_un_scalaire(direction,(self.dexter.v*self.pas_temps)) 
             print("vect_v.x",vect_v.x,"et vect_v.y",vect_v.y)
             for j in range(pas):
                 print("ok")
