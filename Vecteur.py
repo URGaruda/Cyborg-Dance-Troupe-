@@ -38,7 +38,8 @@ class Vecteur:
         return new_vecteur
 
 
-    def mult_par_un_scalaire(self,vecteur, k):
+    def mult_par_un_scalaire(self,k):
+        vecteur=Vecteur(self.x,self.y)
         vecteur.x=k*(vecteur.x)
         vecteur.y=k*(vecteur.y)
         return vecteur

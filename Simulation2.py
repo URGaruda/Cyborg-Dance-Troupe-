@@ -34,7 +34,7 @@ class Simulation :
         robot=self.dexter.copie() # crée une copie qui va faire des 
         pas=0
         while not(self.hors_terrain(robot)) :
-            vect_v=self.dexter.dir.mult_par_un_scalaire(self.dexter.dir,(self.dexter.v/self.pas_temps))
+            vect_v=self.dexter.dir.mult_par_un_scalaire((self.dexter.v/self.pas_temps))
             robot.x=vect_v.x
             robot.y=vect_v.y
             pas+=1
@@ -57,21 +57,16 @@ class Simulation :
         print("+\n")
     def simulation_carre(self,pas):
         """ Fait faire un carré au robot de la distance "dist" au robot sur le terrain (0.0,Xmax) en x et (0.0,Ymax) """
-        print("ok")
         print(self.dexter.dir.x,",",self.dexter.dir.y)
         for i in range(4):
-            direction=self.dexter.dir.copie(self.dexter.dir)
-            vect_v=self.dexter.dir.mult_par_un_scalaire(direction,(self.dexter.v*self.pas_temps)) 
-            print("vect_v.x",vect_v.x,"et vect_v.y",vect_v.y)
+            vect_v=self.dexter.dir.mult_par_un_scalaire((self.dexter.v*self.pas_temps)) 
             for j in range(pas):
-                print("ok")
                 print(self.dexter.x,",",self.dexter.y) 
                 self.dexter.x+=vect_v.x
                 self.dexter.y+=vect_v.y
-                """if(self.hors_terrain(self.dexter)):
+                if(self.hors_terrain(self.dexter)):
                     print("Dexter est sorti du terrain")
                     return
-                """ 
                 if(self.collision(Vecteur(self.dexter.x,self.dexter.y ))):
                     print("Il y a eu collision")
                     return 
@@ -80,7 +75,7 @@ class Simulation :
                     time.sleep(1)
                     break 
                 time.sleep(0.5)
-            print("coucou")
+            print("un tour s'est passé")
             self.dexter.dir.rotation_anti_horaire(math.pi/2)
             time.sleep(2)
         print("simulation fini")
