@@ -34,7 +34,7 @@ class Simulation :
         robot=self.dexter.copie() # crée une copie qui va faire des 
         pas=0
         while not(self.hors_terrain(robot)) :
-            vect_v=self.dexter.dir.mult_par_un_scalaire((self.dexter.v/self.pas_temps))
+            vect_v=self.dexter.dir.mult_par_un_scalaire((self.dexter.v*self.pas_temps))
             robot.x=vect_v.x
             robot.y=vect_v.y
             pas+=1
