@@ -47,12 +47,14 @@ class Vecteur:
         
     def rotation_anti_horaire (self,angle):
         """ Rotation anti-horaire d'angle "angle" en radians """
+        angle=math.radians(angle)
         x= self.x * math.cos(angle) - self.y * math.sin(angle)
         y= self.x * math.sin(angle) + self.y * math.cos(angle)
         self.x=x
         self.y=y
     def rotation_horaire (self,angle):
         """ Rotation horaire d'angle "angle" en radians """
+        angle=math.radians(angle)
         x= self.x * math.cos(angle) + self.y * math.sin(angle)
         y= - self.x * math.sin(angle) + self.y * math.cos(angle)
         self.x=x
@@ -78,3 +80,7 @@ print(v4.x,",",v4.y)
 v4.rotation(math.pi/2)
 print(v4.x,",",v4.y)
 print((v4.mult_par_un_scalaire(v4,5)).y)"""
+
+vtest=Vecteur(5,7)
+vtest.rotation_anti_horaire(0.60)
+print(vtest.x,",",vtest.y)

@@ -87,7 +87,7 @@ try:
 except ValueError as erreur :
     print(erreur)    
 def update():
-    sim=Simulation(124.29,196.96,4.2,3,8,0.020,[])
+    sim=Simulation(124.29,196.96,4.2,3,8,0.20,[])
     sim.simulation_carre(10)
 update()
 
