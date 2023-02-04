@@ -25,17 +25,7 @@ class Robot :
         robot=copy.copy(self)
         return robot
 
-    def stop(self):
-        """ Met la vitesse du robot à 0 pour l'arrêter """
-        self.v=0.0
-
-    def acceleration(self,val):
-        """ Augmente la vitesse v du robot d'une valeur val """
-        self.v+=val
-
-    def freinage(self,val):
-        """ Reduit la vitesse v du robot d'une valeur val """
-        self.v-=val
+    
 
 
 """
