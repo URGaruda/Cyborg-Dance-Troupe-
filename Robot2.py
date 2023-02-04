@@ -10,12 +10,12 @@ class Robot :
             raise ValueError("L'angle doit être entre 0 et 360 degrés")
         self.x = x  #coordonnée x du robot
         self.y = y  #coordonnée y du robot 
-        self.vmoy = 0.0  #vitesse moyenne du robot en cm/s
+        self.vmoy = 0.0  #vitesse moyenne du robot en cm/s qui est calculé à partir des vitesses des 2 roues 
         self.R = R  #Rayon du robot 
         self.theta = theta #angle de vue du robot 
-        self.l=11.5 # longueur entre les deux roues en cm/s  
-        self.v1=0.0 #vitesse de la roue gauche 
-        self.v2=0.0 #vitesse de la roue droite 
+        self.l=11.5 # longueur entre les deux roues en cm  
+        self.v1=0.0 #vitesse de la roue gauche en cm/s
+        self.v2=0.0 #vitesse de la roue droite en cm/s 
         new_dir=Vecteur(dirX-x,dirY-y)
         norme_dir=new_dir.norme()
         self.dir=Vecteur((new_dir.x/norme_dir),(new_dir.y/norme_dir)) #direction du robot 
