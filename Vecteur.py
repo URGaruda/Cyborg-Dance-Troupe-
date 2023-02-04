@@ -82,5 +82,5 @@ print(v4.x,",",v4.y)
 print((v4.mult_par_un_scalaire(v4,5)).y)"""
 
 vtest=Vecteur(5,7)
-vtest.rotation_anti_horaire(0.60)
+vtest.rotation_horaire(34.5)
 print(vtest.x,",",vtest.y)
