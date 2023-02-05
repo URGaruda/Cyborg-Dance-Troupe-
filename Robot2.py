@@ -4,8 +4,6 @@ from Vecteur import Vecteur
 class Robot :
     VMAX= 25 # vitesse maximale du robot en cm/s 
     def  __init__(self , x , y, R , theta , dirX,dirY ):
-        if v<0 or v>Robot.VMAX:
-            raise ValueError("La vitesse doit etre entre 0 et {} ".format(Robot.VMAX))
         if theta < 0 or theta > 360:
             raise ValueError("L'angle doit être entre 0 et 360 degrés")
         self.x = x  #coordonnée x du robot
@@ -25,6 +23,19 @@ class Robot :
         robot=copy.copy(self)
         return robot
 
+    def setVitesse_A(self,v):
+        """Initialise les vitesses des 2 roues du robot à la même vitesse """
+        if v<0.0 or v>Robot.VMAX:
+            raise ValueError("La vitesse doit etre entre 0 et {} ".format(Robot.VMAX))
+        self.v1=v
+        self.v2=v
+    def setVitesse_B(self,v1,v2):
+        if v1<0.0 or v2<0.0 or v1>Robot.VMAX or v2>Robot.VMAX:
+            raise ValueError("La vitesse doit etre entre 0 et {} ".format(Robot.VMAX))
+        self.v1=v1
+        self.v2=v2 
+    
+    
     
 
 

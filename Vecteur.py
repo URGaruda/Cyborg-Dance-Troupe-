@@ -79,8 +79,9 @@ v4.rotation(math.pi/2)
 print(v4.x,",",v4.y)
 v4.rotation(math.pi/2)
 print(v4.x,",",v4.y)
-print((v4.mult_par_un_scalaire(v4,5)).y)"""
+print((v4.mult_par_un_scalaire(v4,5)).y)
 
 vtest=Vecteur(5,7)
 vtest.rotation_horaire(34.5)
 print(vtest.x,",",vtest.y)
+"""
