@@ -82,7 +82,7 @@ class Simulation :
             
         
 
-    def affichage(self):
+    def affichage(self): # essai d'affichage raté 
         print("+", end='')
         for j in range(int(self.Ymax)+1):
             print("-", end='')
@@ -95,7 +95,7 @@ class Simulation :
         for j in range(int(self.Ymax)+1):
             print("-", end='')
         print("+\n")
-    def simulation_carre(self,pas):
+    def simulation_carre(self,pas): # ancienne simulation 
         """ Fait faire un carré au robot de la distance "dist" au robot sur le terrain (0.0,Xmax) en x et (0.0,Ymax) """
         print(self.dexter.dir.x,",",self.dexter.dir.y)
         for i in range(4):
