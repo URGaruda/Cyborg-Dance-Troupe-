@@ -132,7 +132,7 @@ def update():
     sim.simulation_carre(10)
 update()
 """
-sim=Simulation(324.29,96.96,6.32,1.45,0.20,[])
+sim=Simulation(324.29,96.96,1,7.45,0.20,[])
 sim.simu_1(12.3)
 
            
