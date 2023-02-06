@@ -26,7 +26,7 @@ class Vecteur:
         return self
 
     def norme(self):
-        return math.sqrt(self.x**2 + self.y**2)
+        return math.sqrt((self.x**2) + (self.y**2))
 
     def p_scalaire(self,vecteur):
         return self.x*vecteur.x+self.y*vecteur.y
@@ -38,39 +38,50 @@ class Vecteur:
         return new_vecteur
 
 
-    def mult_par_un_scalaire(self,vecteur, k):
+    def mult_par_un_scalaire(self,k):
+        vecteur=Vecteur(self.x,self.y)
         vecteur.x=k*(vecteur.x)
         vecteur.y=k*(vecteur.y)
         return vecteur
     
         
-    def rotation (self,angle):
-        angle= math.radians(angle)
+    def rotation_anti_horaire (self,angle):
+        """ Rotation anti-horaire d'angle "angle" en radians """
+        angle=math.radians(angle)
         x= self.x * math.cos(angle) - self.y * math.sin(angle)
         y= self.x * math.sin(angle) + self.y * math.cos(angle)
         self.x=x
         self.y=y
-
+    def rotation_horaire (self,angle):
+        """ Rotation horaire d'angle "angle" en radians """
+        angle=math.radians(angle)
+        x= self.x * math.cos(angle) + self.y * math.sin(angle)
+        y= - self.x * math.sin(angle) + self.y * math.cos(angle)
+        self.x=x
+        self.y=y
+    
+    def angle_rotation(self,vecteur): # angle est dans l'intervalle 0 PI 
+        val=self.p_scalaire(vecteur)/(vecteur.norme()*self.norme())
+        return math.acos(val)
 """v1 = Vecteur(1, 2)
 v2 = Vecteur(3, 4)
-v1.addition(x=1, y=1) 
-print(v1.x,",",v1.y)
+v3 = Vecteur(8,14)
+v1.addition(x=1, y=1)
 v1.addition(vecteur=v2)
-print(v1.x,",",v1.y)
 v1.soustraction(x=1,y=1)
-print(v1.x,",",v1.y)
 v1.soustraction(vecteur=v2)
-print(v1.x,",",v1.y)
-v3=v1.copie(v2)
-print(v3.x,",",v3.y)
-v1=v1.mult_par_un_scalaire(v1,5)  
-print(" ")
-print(v1.x,",",v1.y)"""
-v4=Vecteur(3.0,2.0)
+v1.copie(v2)
+print(v1.angle_rotation(v2))
+print(v3.angle_rotation(v1))
+print(v2.angle_rotation(v3))
+v4=Vecteur(3,2)
 v4.rotation(math.pi/2)
-#print(math.radians(math.pi/2))
 print(v4.x,",",v4.y)
-v4.rotation((math.pi/2))
+v4.rotation(math.pi/2)
 print(v4.x,",",v4.y)
-"""v4.rotation(math.pi/2)
-print(v4.x,",",v4.y)"""
+print((v4.mult_par_un_scalaire(v4,5)).y)
+
+vtest=Vecteur(5,7)
+vtest.rotation_horaire(34.5)
+print(vtest.x,",",vtest.y)
+"""
