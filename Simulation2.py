@@ -18,10 +18,10 @@ class Simulation :
         self.liste_obstacle=obstacle
         self.pas_temps=temps
     
-    def collision(self,vect):
+    def collision(self,robot):
         """ Determine si le Robot Dexter est où pas en collision avec un des obstacles du terrain """
         for obj in self.liste_obstacle :
-            return not(math.sqrt(((obj.x-vect.x)**2)+((obj.y-vect.y)**2)) > obj.R+vect.R) # si y'a colision il renvoie vrai 
+            return not(math.sqrt(((obj.x-robot.x)**2)+((obj.y-robot.y)**2)) > obj.R+robot.R) # si y'a colision il renvoie vrai 
     
     def hors_terrain(self,robot):
         """ Prends un robot et vérifie s'il est toujours sur le terrain """
@@ -52,6 +52,10 @@ class Simulation :
         angular_speed = (self.dexter.right_wheel_speed - self.dexter.left_wheel_speed) / (2 * math.pi * self.dexter.wheel_base)
         delta_direction = angular_speed * time_delta
         self.dexter.direction += delta_direction
+    
+    def marche_arrierre(self):
+        self.dexter.set_speeds(-self.dexter.left_wheel_speed,-self.dexter.right_wheel_speed) #inverse la vitesse des deux roues pour faire une marche arrière 
+
     
 
 for i in [] :

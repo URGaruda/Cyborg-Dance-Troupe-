@@ -12,9 +12,10 @@ class Robot :
         self.theta = theta #angle de vue du robot  
         self.wheel_radius = wheel_radius  #rayon des roues 
         self.wheel_base = wheel_base # longueur entre les deux roues en cm 
-        self.left_wheel_speed = 0 #vitesse de la roue gauche en cm/s
-        self.right_wheel_speed = 0 #vitesse de la roue droite en cm/s
+        self.left_wheel_speed = 0.0 #vitesse de la roue gauche en cm/s
+        self.right_wheel_speed = 0.0 #vitesse de la roue droite en cm/s
         self.direction = direction #direction du robot en radians 
+        self.history = [(x,y)]
 
     def copie(self):
         """Fait une copie du robot """
