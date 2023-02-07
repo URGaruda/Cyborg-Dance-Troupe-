@@ -55,14 +55,14 @@ class Robot:
         
         self.historique.append((self.x, self.y))
     
-    def check_collision(self, arene_x, arene_y, obstacles):
+    def check_collision(self, arene_xmax, arene_ymax, obstacles):
         """
         Vérifie s'il y a une collision entre le robot et les bords de l'arène/ obstacle
         """
         # Vérifie une collision avec les bords de l'arène
-        if self.x - self.rayon_robot < 0 or self.x + self.rayon_robot > arene_x:
+        if self.x - self.rayon_robot < 0 or self.x + self.rayon_robot > arene_xmax:
             return True
-        if self.y - self.rayon_robot < 0 or self.y + self.rayon_robot > arene_y:
+        if self.y - self.rayon_robot < 0 or self.y + self.rayon_robot > arene_ymax:
             return True
         
         # Vérifie une collision avec les obstacles
