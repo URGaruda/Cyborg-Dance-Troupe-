@@ -37,6 +37,24 @@ class Robot:
         self.vitesse_roue_gauche = vitesse_roue_gauche
         self.vitesse_roue_droite = vitesse_roue_droite
 
+    def update_position(self, delta_time):
+        """
+        Met à jour la position et l'orientation du robot en fonction des vitesses de ses roues.
+        """
+        vitesse_moyenne = (self.vitesse_roue_gauche + self.vitesse_roue_droite) / 2 #vitesse angulaire moyenne
+        vitesse_moyenne = vitesse_moyenne / (2 * math.pi * self.rayon_roue) #vitesse lineaire moyenne
+        delta_x = vitesse_moyenne * math.cos(self.orientation) * delta_time #trignometry
+        delta_y = vitesse_moyenne * math.sin(self.orientation) * delta_time #trigonometry
+        self.x += delta_x
+        self.y += delta_y
+        
+        
+        vitesse_angulaire = (self.vitesse_roue_droite - self.vitesse_roue_gauche) / (2 * math.pi * self.distance_roues) #la vitesse de rotation du robot autour de son axe central
+        delta_orientation = vitesse_angulaire * delta_time #calcule le changement d'orientation
+        self.orientation += delta_orientation #calcule la nouvelle orientation
+        
+        self.historique.append((self.x, self.y))
+
     def copie(self):
         """Fait une copie du robot """
         robot=copy.copy(self)
