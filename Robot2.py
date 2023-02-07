@@ -1,6 +1,7 @@
 import math
 import copy
 from Vecteur import Vecteur 
+<<<<<<< HEAD
 class Robot:
     """
     Classe pour représenter un robot.
@@ -34,17 +35,9 @@ class Robot:
         robot=copy.copy(self)
         return robot
 
-    def setVitesse_A(self,v):
-        """Initialise les vitesses des 2 roues du robot à la même vitesse """
-        if v<0.0 or v>Robot.VMAX:
-            raise ValueError("La vitesse doit etre entre 0 et {} ".format(Robot.VMAX))
-        self.v1=v
-        self.v2=v
-    def setVitesse_B(self,v1,v2):
-        if v1<0.0 or v2<0.0 or v1>Robot.VMAX or v2>Robot.VMAX:
-            raise ValueError("La vitesse doit etre entre 0 et {} ".format(Robot.VMAX))
-        self.v1=v1
-        self.v2=v2 
+    def set_speeds(self, left_wheel_speed, right_wheel_speed):
+        self.left_wheel_speed = left_wheel_speed
+        self.right_wheel_speed = right_wheel_speed
     
     
     
