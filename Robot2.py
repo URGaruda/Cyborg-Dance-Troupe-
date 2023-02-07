@@ -1,7 +1,7 @@
 import math
 import copy
 from Vecteur import Vecteur 
-<<<<<<< HEAD
+
 class Robot:
     """
     Classe pour représenter un robot.
@@ -29,15 +29,19 @@ class Robot:
         self.vitesse_roue_gauche = 0
         self.vitesse_roue_droite = 0
         self.historique = []
+    
+    def set_vitesse(self, vitesse_roue_gauche, vitesse_roue_droite):
+        """
+        Définit les vitesses de la roue gauche et droite du robot.
+        """
+        self.vitesse_roue_gauche = vitesse_roue_gauche
+        self.vitesse_roue_droite = vitesse_roue_droite
 
     def copie(self):
         """Fait une copie du robot """
         robot=copy.copy(self)
         return robot
 
-    def set_speeds(self, left_wheel_speed, right_wheel_speed):
-        self.left_wheel_speed = left_wheel_speed
-        self.right_wheel_speed = right_wheel_speed
     
     
     
