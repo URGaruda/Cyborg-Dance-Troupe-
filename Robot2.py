@@ -1,22 +1,33 @@
 import math
 import copy
 from Vecteur import Vecteur 
-class Robot :
-    VMAX= 25 # vitesse maximale du robot en cm/s 
-    def  __init__(self , x , y, R , theta , dirX,dirY ):
-        if theta < 0 or theta > 360:
-            raise ValueError("L'angle doit être entre 0 et 360 degrés")
-        self.x = x  #coordonnée x du robot
-        self.y = y  #coordonnée y du robot 
-        self.vmoy = 0.0  #vitesse moyenne du robot en cm/s qui est calculé à partir des vitesses des 2 roues 
-        self.R = R  #Rayon du robot 
-        self.theta = theta #angle de vue du robot 
-        self.l=11.5 # longueur entre les deux roues en cm  
-        self.v1=0.0 #vitesse de la roue gauche en cm/s
-        self.v2=0.0 #vitesse de la roue droite en cm/s 
-        new_dir=Vecteur(dirX-x,dirY-y)
-        norme_dir=new_dir.norme()
-        self.dir=Vecteur((new_dir.x/norme_dir),(new_dir.y/norme_dir)) #direction du robot 
+class Robot:
+    """
+    Classe pour représenter un robot.
+
+    Attributs:
+        x (float): la position x du robot.
+        y (float): la position y du robot.
+        orientation (float): orientation du robot en radians.
+        rayon_roue (float): le rayon des deux roues.
+        distance_roues (float): la distance entre les deux roues du robot.
+        vitesse_roue_gauche (float): vitesse angulaire de la roue gauche du robot en radians par seconde.
+        vitesse_roue_droite (float): vitesse angulaire de la roue droite du robot en radians par seconde.
+        historique (list): une liste de tuples de la position x, y du robot à chaque instant.
+    """
+    def __init__(self, x, y, orientation, rayon_roue, distance_roues):
+        """
+        Initialise un objet de la classe Robot avec les paramètres donnés.
+        """
+       
+        self.x = x
+        self.y = y
+        self.orientation = orientation
+        self.rayon_roue = rayon_roue
+        self.distance_roues = distance_roues
+        self.vitesse_roue_gauche = 0
+        self.vitesse_roue_droite = 0
+        self.historique = []
 
     def copie(self):
         """Fait une copie du robot """
