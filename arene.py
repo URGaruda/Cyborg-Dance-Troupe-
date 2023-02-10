@@ -1,5 +1,6 @@
 import math 
 from robot import Robot
+from obstacle import Obstacle
 
 class Obstacle : 
     def __init__(self,x,y,rayon):
