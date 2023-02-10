@@ -1,5 +1,4 @@
-from robot import Robot 
-import arene as ar 
+from arene import Arene 
 class Affichage : 
 
     def __init__(self,arene):
