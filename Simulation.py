@@ -1,6 +1,6 @@
 import math
 import matplotlib.pyplot as plt
-from Robot2 import Robot 
+from robot import Robot 
 import random
 
 
