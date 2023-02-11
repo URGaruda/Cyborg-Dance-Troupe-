@@ -1,12 +1,6 @@
 import math 
 from robot import Robot
-from obstacle import Obstacle
-
-class Obstacle : 
-    def __init__(self,x,y,rayon):
-        self.x=x
-        self.y=y
-        self.rayon=rayon
+from obstacle import Obstacle 
 
 class Arene : 
     arene_longueur=100.0 #longueur de l'arène 

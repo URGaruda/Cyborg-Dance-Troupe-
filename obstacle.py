@@ -1,7 +1,7 @@
 class Obstacle : 
-    def __init__(self,x,y,R):
+    def __init__(self,x,y,rayon):
         self.x=x
         self.y=y
-        self.R=R
+        self.rayon=rayon
     
         
