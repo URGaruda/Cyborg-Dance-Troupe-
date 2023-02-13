@@ -1,6 +1,7 @@
 import math 
 from robot import Robot
 from obstacle import Obstacle 
+from random import *
 
 class Arene : 
     arene_longueur=100.0 #longueur de l'arène 
@@ -10,7 +11,14 @@ class Arene :
         self.robot=robot 
         self.obstacles=obstacles
         self.dt=dt
-    def arene_update():
+    def ajout_obstacle(self,n,rayon):
+        for i in rang(n):
+            x=random.randint(0,self.arene_longueur)
+            y=random.randint(0,self.arene_largeur)
+            rayon = random.randint(1,10) 
+            self.obstacles.append(Obstacle(x,y,rayon))
+            def arene_update():
+
         return 
 
         
