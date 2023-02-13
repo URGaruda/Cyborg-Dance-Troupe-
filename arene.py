@@ -17,8 +17,8 @@ class Arene :
             y=random.randint(0,self.arene_largeur)
             rayon = random.randint(1,10) 
             self.obstacles.append(Obstacle(x,y,rayon))
-            def arene_update():
-
+    def arene_update():
+        self.robot.update_position(self.dt)
         return 
 
         
