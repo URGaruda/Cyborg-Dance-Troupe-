@@ -4,5 +4,6 @@ class Affichage :
     def __init__(self,arene):
         self.arene=arene
 
-    def updateAffichage():
+    def updateAffichage(self,):
+
         return 
