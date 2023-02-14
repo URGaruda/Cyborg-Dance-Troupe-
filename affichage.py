@@ -1,9 +1,9 @@
 from arene import Arene 
-class Affichage : 
+class Affichage() : 
 
     def __init__(self,arene):
         self.arene=arene
 
-    def updateAffichage(self,):
+    def updateAffichage(self):
 
-        return 
+        return  
