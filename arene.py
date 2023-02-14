@@ -11,14 +11,17 @@ class Arene :
         self.robot=robot 
         self.obstacles=obstacles
         self.dt=dt
-    def ajout_obstacle(self,n,rayon):
-        for i in rang(n):
-            x=random.randint(0,self.arene_longueur)
-            y=random.randint(0,self.arene_largeur)
-            rayon = random.randint(1,10) 
-            self.obstacles.append(Obstacle(x,y,rayon))
-    def arene_update():
-        self.robot.update_position(self.dt)
-        return 
+    def ajout_obstacle(self,o):
+        """ Prends un obstacle o et l'ajoute dans l'arène """
+        self.obstacles.append(o)
+        print("Obstacle ajouté")
+    def arene_update(self):
+        self.robot.deplacement()
+    def stop(self):
+        self.robot.check_collision()
+    
+
+
+         
 
         

@@ -40,6 +40,7 @@ class Robot:
     def check_collision(self, arene_x, arene_y, obstacles):
         """
         Vérifie s'il y a une collision entre le robot et les bords de l'arène/ obstacle
+        avec arene_x la longueur en x et arene_y la longueur en y 
         """
         # Vérifie une collision avec les bords de l'arène
         if self.x - self.rayon_robot < 0 or self.x + self.rayon_robot > arene_x:
