@@ -7,15 +7,16 @@ class IA:
         self.distance=distance
         self.arene=arene
     def start(self,vitG,vitD):
-        self.parcouru=0
+        self.parcouru=0.0
         self.robot.set_vitesse(vitG,vitD)
     def step(self):
-        self.parcouru+=math.sqrt((self.robot.x-self.robot.historique[len(self.robot.historique)-1][0])**2+(self.robot.y-self.robot.historique[len(self.robot.historique)-1][1])**2 )
+        print("voici le resultat",math.sqrt((self.robot.x-self.robot.historique[-1][0])**2+(self.robot.y-self.robot.historique[-1][1])**2 ))
+        self.parcouru+=math.sqrt((self.robot.x-self.robot.historique[-1][0])**2+(self.robot.y-self.robot.historique[-1][1])**2 )
     def stop(self):
         if(self.parcouru>self.distance):
             print("Distance Parcouru")
-        elif(self.robot.check_collision(Arene.arene_longueur,Arene.arene_largeur,self.arene.obstacles)):
+        elif(self.arene.check_collision()):
             print("Il y a une collision ")
         else:
             print()
-        return self.parcouru>self.distance or self.robot.check_collision(Arene.arene_longueur,Arene.arene_largeur,self.arene.obstacles)
+        return self.parcouru>self.distance or self.arene.check_collision()

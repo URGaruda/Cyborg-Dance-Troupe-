@@ -10,6 +10,25 @@ class Arene() :
         self.robot=robot 
         self.obstacles=obstacles
         self.dt=dt
+    def check_collision(self):
+        """
+        Vérifie s'il y a une collision entre le robot et les bords de l'arène/ obstacle
+        avec arene_x la longueur en x et arene_y la longueur en y 
+        """
+        # Vérifie une collision avec les bords de l'arène
+        if self.robot.x - self.robot.rayon_robot < 0 or self.robot.x + self.robot.rayon_robot > self.arene_longueur:
+            return True
+        if self.robot.y - self.robot.rayon_robot < 0 or self.robot.y + self.robot.rayon_robot > self.arene_largeur:
+            return True
+
+        # Vérifie une collision avec les obstacles
+        for obstacle in self.obstacles:
+            distance = math.sqrt((self.robot.x - obstacle.x)**2 + (self.robot.y - obstacle.y)**2)
+            if distance < self.robot.rayon_robot + obstacle.rayon:
+                return True
+
+        return False
+    
     def ajout_obstacle(self,o):
         """ Prends un obstacle o et l'ajoute dans l'arène """
         self.obstacles.append(o)

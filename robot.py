@@ -37,25 +37,6 @@ class Robot:
         self.vitesse_roue_gauche = vitesse_roue_gauche
         self.vitesse_roue_droite = vitesse_roue_droite
 
-    def check_collision(self, arene_x, arene_y, obstacles):
-        """
-        Vérifie s'il y a une collision entre le robot et les bords de l'arène/ obstacle
-        avec arene_x la longueur en x et arene_y la longueur en y 
-        """
-        # Vérifie une collision avec les bords de l'arène
-        if self.x - self.rayon_robot < 0 or self.x + self.rayon_robot > arene_x:
-            return True
-        if self.y - self.rayon_robot < 0 or self.y + self.rayon_robot > arene_y:
-            return True
-
-        # Vérifie une collision avec les obstacles
-        for obstacle in obstacles:
-            distance = math.sqrt((self.x - obstacle.x)**2 + (self.y - obstacle.y)**2)
-            if distance < self.rayon_robot + obstacle.rayon:
-                return True
-
-        return False
-
     def deplacement(self, delta_time):
         """
         Met à jour la position et l'orientation du robot en fonction des vitesses de ses roues.

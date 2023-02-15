@@ -16,7 +16,7 @@ class Affichage() :
         l_robot=[plt.Circle((robot.x,robot.y),robot.rayon_robot, color='r') ]
         for r in l_robot:
             ax.add_patch(r)
-        ax.set_xlim(0, 100)
-        ax.set_ylim(0, 100)
+        ax.set_xlim(0.0, Arene.arene_longueur)
+        ax.set_ylim(0.0, Arene.arene_largeur)
         plt.show()
       
