@@ -1,5 +1,5 @@
 import math
-
+import constantes 
 class Robot:
     """
     Classe pour représenter un robot.
@@ -15,19 +15,19 @@ class Robot:
         vitesse_roue_droite (float): vitesse angulaire de la roue droite du robot en radians par seconde.
         historique (list): une liste de tuples de la position x, y du robot à chaque instant.
     """
-    def __init__(self, x, y, orientation, rayon_robot, rayon_roue, distance_roues):
+    def __init__(self):
         """
         Initialise un objet de la classe Robot avec les paramètres donnés.
         """
        
-        self.x = x
-        self.y = y
-        self.orientation = orientation
-        self.rayon_robot=rayon_robot
-        self.rayon_roue = rayon_roue
-        self.distance_roues = distance_roues
-        self.vitesse_roue_gauche = 0
-        self.vitesse_roue_droite = 0
+        self.x = constantes.x
+        self.y = constantes.y
+        self.orientation = constantes.Orientation
+        self.rayon_robot=constantes.Rayon_Robot
+        self.rayon_roue = constantes.Rayon_Roue
+        self.distance_roues = constantes.Distance_Roues
+        self.vitesse_roue_gauche = 0.0
+        self.vitesse_roue_droite = 0.0
         self.historique = []
     
     def set_vitesse(self, vitesse_roue_gauche, vitesse_roue_droite):
@@ -42,6 +42,9 @@ class Robot:
         Met à jour la position et l'orientation du robot en fonction des vitesses de ses roues.
         """
         print(self.x,self.y)
+
+        self.historique.append((self.x, self.y))
+        
         vitesse_moyenne = (self.vitesse_roue_gauche + self.vitesse_roue_droite) / 2 
         vitesse_moyenne = vitesse_moyenne / (2 * math.pi * self.rayon_roue) #vitesse lineaire moyenne
         delta_x = vitesse_moyenne * math.cos(self.orientation) * delta_time 
@@ -54,6 +57,6 @@ class Robot:
         delta_orientation = vitesse_angulaire * delta_time #calcule le changement d'orientation
         self.orientation += delta_orientation #calcule la nouvelle orientation
         
-        self.historique.append((self.x, self.y))
+    
 
     
