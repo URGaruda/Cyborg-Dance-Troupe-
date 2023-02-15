@@ -6,7 +6,7 @@ from affichage import Affichage,Affichage2
 import constantes 
 import time
 
-l_obstacle=[Obstacle(random.uniform(0,100),random.uniform(0,100),random.uniform(0.9,4))for i in range (30) ]
+l_obstacle=[Obstacle(random.uniform(0,Arene.arene_longueur),random.uniform(0,Arene.arene_largeur),random.uniform(0.9,4))for i in range (30) ]
 dexter=Robot()
 terrain=Arene(dexter,l_obstacle,0.01)
 ruby=ia.IA(dexter,20.5,terrain)
