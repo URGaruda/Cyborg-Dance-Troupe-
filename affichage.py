@@ -8,26 +8,9 @@ class Affichage() :
 
     def __init__(self,arene):
         self.arene=arene
-
-    def updateAffichage(self,robot,obstacles):
-        fig, ax = plt.subplots()
-        l_obstacles=[plt.Circle((obs.x,obs.y),obs.rayon)for obs in obstacles]
-        for o in l_obstacles:
-            ax.add_patch(o)
-        l_robot=[plt.Circle((robot.x,robot.y),robot.rayon_robot, color='r') ]
-        for r in l_robot:
-            ax.add_patch(r)
-        ax.set_xlim(0.0, Arene.arene_longueur)
-        ax.set_ylim(0.0, Arene.arene_largeur)
-        plt.show()
-  
-class Affichage2() : 
-
-    def __init__(self,arene):
-        self.arene=arene
         self.fenetre=Tk()
         #self.fenetre.state('zoomed')
-        self.acanvas= Canvas(self.fenetre,width = 400, height = 400 , bd=0, bg="white")
+        self.acanvas= Canvas(self.fenetre,width = 1000, height = 1000 , bd=0, bg="white")
         self.acanvas.pack(padx=10,pady=10)
         self.liste_objet=[]
     def clear(self):

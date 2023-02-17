@@ -2,7 +2,7 @@ import ia
 import random
 from arene import Arene,Obstacle
 from robot import Robot 
-from affichage import Affichage,Affichage2
+from affichage import Affichage
 import constantes 
 import time
 
@@ -10,7 +10,7 @@ l_obstacle=[Obstacle(random.uniform(0,Arene.arene_longueur),random.uniform(0,Are
 dexter=Robot()
 terrain=Arene(dexter,l_obstacle,0.01)
 ruby=ia.IA(dexter,20.5,terrain)
-aff=Affichage2(terrain)
+aff=Affichage(terrain)
 ruby.start(constantes.Vitesse_Gauche,constantes.Vitesse_Droite)
 i=0
 while not ruby.stop():
@@ -21,6 +21,6 @@ while not ruby.stop():
     i+=1"""
     aff.updateAffichage(dexter,l_obstacle)
     aff.fenetre.update()
-    #time.sleep(0.2)
+    time.sleep(0.2)
 
 
