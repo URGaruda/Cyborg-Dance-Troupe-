@@ -21,6 +21,6 @@ while not ruby.stop():
     i+=1"""
     aff.updateAffichage(dexter,l_obstacle)
     aff.fenetre.update()
-    time.sleep(0.2)
+    #time.sleep(0.2)
 
 
