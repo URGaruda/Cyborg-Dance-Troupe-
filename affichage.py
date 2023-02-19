@@ -14,13 +14,15 @@ class Affichage() :
         self.acanvas.pack(padx=10,pady=10)
         self.liste_objet=[]
     def clear(self):
-        self.acanvas.delete(self.liste_objet)
-    def ok(self,robot,obstacles):
-        ray_r=robot.rayon_robot
-        self.liste_objet.append(self.acanvas.create_oval(robot.x+ray_r,robot.y+ray_r,robot.x-ray_r,robot.y-ray_r,fill='red'))
-        for o in obstacles :
-            self.acanvas.create_oval(o.x+o.rayon,o.y+o.rayon,o.x-o.rayon,o.y-o.rayon,fill='green')
+        self.acanvas.delete(ALL)
+        self.liste_objet=[]
+
     def updateAffichage(self,robot,obstacles):
-        self.ok(robot,obstacles)
-        self.clear()
-    
+        ray_r=robot.rayon_robot
+        if len(self.liste_objet)>0:
+            self.acanvas.delete(self.liste_objet[-1])
+            self.liste_objet.pop()
+        self.liste_objet.append(self.acanvas.create_oval(robot.x + ray_r, robot.y + ray_r, robot.x - ray_r, robot.y - ray_r, fill='red'))
+        for o in obstacles:
+            self.acanvas.create_oval(o.x + o.rayon, o.y + o.rayon, o.x - o.rayon, o.y - o.rayon, fill='green')
+        self.fenetre.update()
