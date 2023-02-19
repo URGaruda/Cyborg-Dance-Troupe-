@@ -1,6 +1,5 @@
 import time
 import math
- 
 class robotmockup:
     WHEEL_BASE_WIDTH         = 117  
     WHEEL_DIAMETER           = 66.5 
@@ -19,6 +18,26 @@ class robotmockup:
         self.MOTOR_LEFT= self._gpg.MOTOR_LEFT
         self.MOTOR_RIGHT = self._gpg.MOTOR_RIGHT
 
+        try:
+            self.camera=picamera.PICamera()
+            if resolution:
+                self.camera.resolution =resolution
+        except Exception as e:
+            print("Camera not found", e)
+        try:
+            self.servo =Servo(servoPort,self._gpg)
+        except Exception as e:
+            print("servo not found",e)
+        try:
+            self.distanceSensor = ds_sensor.DistanceSensor()
+        except Exception as e:
+            print("Distance Sensor not found",e)
+        try:
+            self.imu = imu.inertial_measurement_unit()
+        except Exception as e:
+            print("IMU sensor not found",e)
+        self._gpg.set_motor_limits(self._gpg.MOTOR_LEFT+self._gpg.MOTOR_RIGHT,0)
+    
     def set_led(self, led, red = 0, green = 0, blue = 0):
         pass
 
