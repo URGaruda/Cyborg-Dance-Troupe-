@@ -23,7 +23,7 @@ for i in range(7):
 ia_carre=ia_seq.IA_Seq(dexter,terrain,l_ia)
 ruby.start()
 i=0
-"""
+
 while not ruby.stop():
     terrain.arene_update()
     ruby.step()
@@ -39,5 +39,6 @@ while not ia_carre.stop():
     aff.updateAffichage(dexter,l_obstacle)
     aff.fenetre.update()
 
-
+    time.sleep(0.001)
+"""
 
