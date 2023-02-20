@@ -1,7 +1,7 @@
 
 """ Constantes pour le robot à manipuler """
 Vitesse_Gauche=25
-Vitesse_Droite=50
+Vitesse_Droite=25
 Orientation=0
 Rayon_Robot=2.4
 Rayon_Roue=3.4

@@ -17,13 +17,13 @@ aff=Affichage(terrain)
 l_ia=[]
 for i in range(7):
     if(i%2==0):
-        l_ia.append(ia.IA(dexter,20.5,terrain) )
+        l_ia.append(ia.IA(dexter,10.5,terrain) )
     else:
        l_ia.append( ia_tourner.Ia_Tourner(dexter,0,terrain) ) 
 ia_carre=ia_seq.IA_Seq(dexter,terrain,l_ia)
 ruby.start()
 i=0
-
+"""
 while not ruby.stop():
     terrain.arene_update()
     ruby.step()
@@ -38,6 +38,6 @@ while not ia_carre.stop():
     ia_carre.step()
     aff.updateAffichage(dexter,l_obstacle)
     aff.fenetre.update()
-"""
+
 
 

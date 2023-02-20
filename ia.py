@@ -6,6 +6,8 @@ class IA:
         self.robot=robot
         self.distance=distance
         self.arene=arene
+        self.parcouru=0.0
+
     def start(self):
         self.parcouru=0.0
     

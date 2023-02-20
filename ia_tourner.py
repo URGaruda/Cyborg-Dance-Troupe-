@@ -12,9 +12,9 @@ class Ia_Tourner:
         self.valide=False
     def start(self):
         if(self.cote==0):
-            self.robot.set_vitesse(self.vitesse_roue_gauche ,-(self.vitesse_roue_droite))
+            self.robot.set_vitesse(self.robot.vitesse_roue_gauche ,-(self.robot.vitesse_roue_droite))
         else:
-            self.robot.set_vitesse(-(self.vitesse_roue_gauche) ,self.vitesse_roue_droite)
+            self.robot.set_vitesse(-(self.robot.vitesse_roue_gauche) ,self.robot.vitesse_roue_droite)
         
     def step(self):
         time.sleep(self.arene.dt)

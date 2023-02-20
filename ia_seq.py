@@ -2,8 +2,8 @@ from robot import Robot
 import math
 from arene import Arene 
 import time 
-from ia import IA
-from ia_tourner import Ia_Tourner
+import ia
+import ia_tourner 
 
 class IA_Seq:
     def __init__(self,robot,arene,liste_ia):
@@ -23,6 +23,6 @@ class IA_Seq:
     def update(self):
         """ fait la maj de l'ia actuelle de la liste  """
         if self.liste[self.cur].stop() :
-            cur+=1
-        self.liste[self.cur].start()
+            self.cur+=1
+            self.liste[self.cur].start()
         
