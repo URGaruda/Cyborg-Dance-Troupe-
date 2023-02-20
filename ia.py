@@ -6,9 +6,9 @@ class IA:
         self.robot=robot
         self.distance=distance
         self.arene=arene
-    def start(self,vitG,vitD):
+    def start(self):
         self.parcouru=0.0
-        self.robot.set_vitesse(vitG,vitD)
+    
     def step(self):
         print("voici le resultat",math.sqrt((self.robot.x-self.robot.historique[-1][0])**2+(self.robot.y-self.robot.historique[-1][1])**2 ))
         self.parcouru+=math.sqrt((self.robot.x-self.robot.historique[-1][0])**2+(self.robot.y-self.robot.historique[-1][1])**2 )
