@@ -14,9 +14,11 @@ class Intermediaire :
         return vitesse_moyenne * Arene.dt 
 
     def get_angle(self):
-        vitesse_angulaire = (self.robot.vitesse_roue_droite - self.robot.vitesse_roue_gauche) / (2 * math.pi * self.ri.distance_roues) #la vitesse de rotation du robot autour de son axe central
+        vitesse_angulaire = (self.robot.vitesse_roue_droite - self.robot.vitesse_roue_gauche) / (2 * math.pi * self.robot.distance_roues) #la vitesse de rotation du robot autour de son axe central
         delta_orientation = vitesse_angulaire * Arene.dt #calcule le changement d'orientation
-        return delta_orientation #calcule la nouvelle orientation
+        return delta_orientation 
+
+    
 
 
 
