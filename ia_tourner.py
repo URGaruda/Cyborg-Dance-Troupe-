@@ -2,23 +2,17 @@ from robot import Robot
 import math
 from arene import Arene 
 import time 
-
+import constantes
 class Ia_Tourner:
     """Fait tourner le robot de 90° soit à gauche si cote=0 ou à droite si cote=1 """
-    def __init__(self,robot,cote,arene):
-        self.robot=robot
+    def __init__(self,cote):
         self.cote=cote
-        self.arene=arene
         self.valide=False
     def start(self):
-        if(self.cote==0):
-            self.robot.set_vitesse(self.robot.vitesse_roue_gauche ,-(self.robot.vitesse_roue_droite))
-        else:
-            self.robot.set_vitesse(-(self.robot.vitesse_roue_gauche) ,self.robot.vitesse_roue_droite)
+        self.a_tourner=0.0
         
     def step(self):
-        time.sleep(self.arene.dt)
-        self.valide=True 
+        pass
     def stop(self):
         if(self.valide):
             return True

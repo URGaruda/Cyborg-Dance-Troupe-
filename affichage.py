@@ -10,7 +10,7 @@ class Affichage() :
         self.arene=arene
         self.fenetre=Tk()
         #self.fenetre.state('zoomed')
-        self.acanvas= Canvas(self.fenetre,width = 1000, height = 1000 , bd=0, bg="white")
+        self.acanvas= Canvas(self.fenetre,width = 400, height = 400 , bd=0, bg="white")
         self.acanvas.pack(padx=10,pady=10)
         self.liste_objet=[]
     def clear(self):
