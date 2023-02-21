@@ -2,8 +2,7 @@ import intermediaire
 import math
 import variables
 class IA:
-    def __init__(self,robot,distance):
-        self.robot=robot
+    def __init__(self,distance):
         self.distance=distance
         self.parcouru=0.0
 

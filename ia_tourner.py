@@ -13,4 +13,6 @@ class Ia_Tourner:
     def step(self):
         self.a_tourner+=variables.inter.get_angle()
     def stop(self):
+        if(self.a_tourner>self.angle):
+            variables.inter.avancer()
         return self.a_tourner>self.angle
