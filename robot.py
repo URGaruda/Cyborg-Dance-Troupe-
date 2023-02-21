@@ -54,7 +54,13 @@ class Robot:
         vitesse_angulaire = (self.vitesse_roue_droite - self.vitesse_roue_gauche) / (2 * math.pi * self.distance_roues) #la vitesse de rotation du robot autour de son axe central
         delta_orientation = vitesse_angulaire * delta_time #calcule le changement d'orientation
         self.orientation += delta_orientation #calcule la nouvelle orientation
-        
+        def senseur_distance(self,obstacles):
+            distance=math.sqrt((self.robot.x - obstacles[0].x)**2 + (self.robot.y - obstacles[0].y)**2)
+            for o in obstacles:
+                res=sqrt((self.robot.x - o.x)**2 + (self.robot.y - o.y)**2)
+                if(res<distance):
+                    distance=res
+            return distance
     
 
     
