@@ -28,7 +28,7 @@ class Robot:
         self.distance_roues = constantes.Distance_Roues
         self.vitesse_roue_gauche = 0.0
         self.vitesse_roue_droite = 0.0
-        self.historique = []
+        
     
     def set_vitesse(self, vitesse_roue_gauche, vitesse_roue_droite):
         """
@@ -42,8 +42,6 @@ class Robot:
         Met à jour la position et l'orientation du robot en fonction des vitesses de ses roues.
         """
         print(self.x,self.y)
-
-        self.historique.append((self.x, self.y))
         
         vitesse_moyenne = (self.vitesse_roue_gauche + self.vitesse_roue_droite) / 2 
         vitesse_moyenne = vitesse_moyenne / (2 * math.pi * self.rayon_roue) #vitesse lineaire moyenne

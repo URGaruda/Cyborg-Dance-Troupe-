@@ -1,14 +1,8 @@
-from robot import Robot 
-import math
-from arene import Arene 
-import time 
 import ia
 import ia_tourner 
 
 class IA_Seq:
-    def __init__(self,robot,arene,liste_ia):
-        self.robot=robot
-        self.arene=arene
+    def __init__(self,liste_ia):
         self.liste=liste_ia
         
     def start(self):
