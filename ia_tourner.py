@@ -1,18 +1,19 @@
-from robot import Robot 
+from robot import Robot
 import math
-from arene import Arene 
-import time 
-import variables
+from arene import Arene
+import time
+from intermediaire import Intermediaire
 class Ia_Tourner:
     """Fait tourner le robot à gauche de angle """
-    def __init__(self,angle):
-        self.angle=angle
+    def __init__(self,dexter,angle):
+        self.inter=Intermediaire(dexter)
+        self.angle=math.radians(angle)
     def start(self):
         self.a_tourner=0.0
-        variables.inter.tourner_gauche()
+        self.inter.tourner_gauche()
     def step(self):
-        self.a_tourner+=variables.inter.get_angle()
+        self.a_tourner+=self.inter.get_angle()
     def stop(self):
         if(self.a_tourner>self.angle):
-            variables.inter.avancer()
+            self.inter.avancer()
         return self.a_tourner>self.angle
