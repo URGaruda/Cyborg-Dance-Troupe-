@@ -1,16 +1,16 @@
 from intermediaire import Intermediaire
 import math
-import variables
+
 class IA:
-    def __init__(self,dexter,distance):
+    def __init__(self,dexter,distance,vitesse):
         self.distance=distance
         self.parcouru=0.0
         self.inter=Intermediaire(dexter)
+        self.vitesse=vitesse
     def start(self):
         self.parcouru=0.0
-    
+        self.inter.avancer(self.vitesse)
     def step(self):
-        #self.parcouru+=math.sqrt((self.robot.x-self.robot.historique[-1][0])**2+(self.robot.y-self.robot.historique[-1][1])**2 )
-        self.parcouru+=variables.inter.get_distance()
+        self.parcouru+=self.inter.get_distance()
     def stop(self):
         return self.parcouru>self.distance 
