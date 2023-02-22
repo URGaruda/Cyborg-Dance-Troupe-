@@ -18,13 +18,13 @@ class Intermediaire :
         delta_orientation = vitesse_angulaire * Arene.dt #calcule le changement d'orientation
         return delta_orientation 
     
-    def tourner_gauche(self):
-        self.robot.set_vitesse(- self.robot.vitesse_roue_gauche,self.robot.vitesse_roue_droite)
-    def tourner_droite(self):
-        self.robot.set_vitesse(self.robot.vitesse_roue_gauche,-self.robot.vitesse_roue_droite)
-    def avancer(self):
+    def tourner_gauche(self,vitesse):
+        self.robot.set_vitesse(-vitesse,vitesse)
+    def tourner_droite(self,vitesse):
+        self.robot.set_vitesse(vitesse,-vitesse)
+    def avancer(self,vitesse):
         """Ajuste les vitesses afin que le robot puisse avancer """
-        self.robot.set_vitesse(math.fabs(self.robot.vitesse_roue_gauche),math.fabs(self.robot.vitesse_roue_droite))
+        self.robot.set_vitesse(vitesse,vitesse)
     
 
 
