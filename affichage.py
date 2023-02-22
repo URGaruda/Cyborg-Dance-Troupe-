@@ -10,7 +10,7 @@ class Affichage() :
         self.arene=arene
         self.fenetre=Tk()
         #self.fenetre.state('zoomed')
-        self.acanvas= Canvas(self.fenetre,width = 400, height = 400 , bd=0, bg="white")
+        self.acanvas= Canvas(self.fenetre,width = 400*3, height = 400*3 , bd=0, bg="white")
         self.acanvas.pack(padx=10,pady=10)
         self.liste_objet=[]
     def clear(self):
@@ -22,7 +22,7 @@ class Affichage() :
         if len(self.liste_objet)>0:
             self.acanvas.delete(self.liste_objet[-1])
             self.liste_objet.pop()
-        self.liste_objet.append(self.acanvas.create_oval(robot.x + ray_r, robot.y + ray_r, robot.x - ray_r, robot.y - ray_r, fill='red'))
+        self.liste_objet.append(self.acanvas.create_oval((robot.x + ray_r)*2.5, (robot.y + ray_r)*2.5,( robot.x - ray_r)*2.5, (robot.y - ray_r)*2.5, fill='red'))
         for o in obstacles:
-            self.acanvas.create_oval(o.x + o.rayon, o.y + o.rayon, o.x - o.rayon, o.y - o.rayon, fill='green')
+            self.acanvas.create_oval((o.x + o.rayon)*2.5,(o.y + o.rayon)*2.5,(o.x - o.rayon)*2.5,( o.y - o.rayon)*2.5, fill='green')
         self.fenetre.update()

@@ -5,7 +5,7 @@ from random import *
 class Arene() : 
     arene_longueur=400.0 #longueur de l'arène 
     arene_largeur=400.0 # largeur de l'arène 
-    dt=0.01 #pas de temps de l'arène 
+    dt=0.1 #pas de temps de l'arène 
     """ La classe Arene a comme variables d'instances : robot un objet de type Robot , obstacles : une liste d'obstacles et dt : une variable qui est censé determiner le pas de temps entre chaque update """
     def __init__(self,robot,obstacles):
         self.robot=robot 

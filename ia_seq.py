@@ -6,9 +6,11 @@ class IA_Seq:
         self.liste=liste_ia
     def start(self):
         self.cur=0
-
+        self.liste[self.cur].start()
     def step(self):
         if self.liste[self.cur].stop() :
+            if self.cur>=len(self.liste):
+                return 
             self.cur+=1
             self.liste[self.cur].start()
         
