@@ -1,11 +1,11 @@
-import intermediaire
+from intermediaire import Intermediaire
 import math
 import variables
 class IA:
-    def __init__(self,distance):
+    def __init__(self,dexter,distance):
         self.distance=distance
         self.parcouru=0.0
-
+        self.inter=Intermediaire(dexter)
     def start(self):
         self.parcouru=0.0
     
