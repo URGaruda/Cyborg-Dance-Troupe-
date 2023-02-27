@@ -1,5 +1,5 @@
-import ia
-import ia_tourner
+import IAs.ia as ia
+import IAs.ia_tourner as ia_tourner
 import ia_seq
 import random
 from arene import Arene,Obstacle
