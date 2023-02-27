@@ -1,5 +1,5 @@
 import math
-import constantes 
+import Autres.constantes as constantes 
 class Robot:
     """
     Classe pour représenter un robot.

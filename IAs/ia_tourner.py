@@ -1,8 +1,7 @@
-from robot import Robot
+from Robot_Arene_Obstacle.robot import Robot
 import math
-from arene import Arene
 import time
-from intermediaire import Intermediaire
+from Robot_Arene_Obstacle.intermediaire import Intermediaire
 class Ia_Tourner:
     """Fait tourner le robot à gauche de angle """
     def __init__(self,dexter,angle,vitesse):

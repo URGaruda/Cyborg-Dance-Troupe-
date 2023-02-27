@@ -1,7 +1,7 @@
-from robot import Robot
-from arene import Arene
+from Robot_Arene_Obstacle.robot import Robot
+from Robot_Arene_Obstacle.arene import Arene
 import math
-import constantes
+from Autres import constantes
 
 """Intermediaire entre les ia et le robot """
 class Intermediaire :

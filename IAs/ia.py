@@ -1,4 +1,4 @@
-from intermediaire import Intermediaire
+from Robot_Arene_Obstacle.intermediaire import Intermediaire
 import math
 
 class IA:

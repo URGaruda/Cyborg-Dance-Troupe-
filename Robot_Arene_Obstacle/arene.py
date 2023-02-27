@@ -1,6 +1,6 @@
 import math 
-from robot import Robot
-from obstacle import Obstacle 
+from .robot import Robot
+from .obstacle import Obstacle 
 from random import *
 class Arene() : 
     arene_longueur=400.0 #longueur de l'arène 

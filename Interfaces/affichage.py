@@ -1,7 +1,7 @@
-from arene import Arene 
+from Robot_Arene_Obstacle.arene import Arene 
 import math
 import matplotlib.pyplot as plt
-from robot import Robot 
+from Robot_Arene_Obstacle.robot import Robot 
 import random
 from tkinter import *
 class Affichage() : 
