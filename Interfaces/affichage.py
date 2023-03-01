@@ -2,7 +2,7 @@ from Robot_Arene_Obstacle.arene import Arene
 import math
 import matplotlib.pyplot as plt
 from Robot_Arene_Obstacle.robot import Robot 
-import time 
+import random
 from tkinter import *
 class Affichage() : 
 
@@ -26,10 +26,3 @@ class Affichage() :
         for o in obstacles:
             self.acanvas.create_oval((o.x + o.rayon)*2.5,(o.y + o.rayon)*2.5,(o.x - o.rayon)*2.5,( o.y - o.rayon)*2.5, fill='green')
         self.fenetre.update()
-
-    def boucle_affichage(self,robot,obstacles,ia):
-        ia.start()
-        while not ia.stop() and not self.arene.check_collision():
-            self.updateAffichage(robot,obstacles)
-            self.fenetre.update()
-            

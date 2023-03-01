@@ -2,7 +2,6 @@ import math
 from .robot import Robot
 from .obstacle import Obstacle 
 from random import *
-import time
 class Arene() : 
     arene_longueur=400.0 #longueur de l'arène 
     arene_largeur=400.0 # largeur de l'arène 
@@ -36,15 +35,4 @@ class Arene() :
         print("Obstacle ajouté")
     def arene_update(self):
         self.robot.deplacement(self.dt)
-    def boucle_arene(self,ia):
-        """ Fait la boucle de la methode affichage """
-        ia.start()
-        while not ia.stop() and not self.check_collision():
-            self.arene_update()
-            
     
-
-
-         
-
-        

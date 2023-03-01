@@ -3,7 +3,6 @@ import Autres.constantes as constantes
 class Robot:
     """
     Classe pour représenter un robot.
-
     Attributs:
         x (float): la position x du robot.
         y (float): la position y du robot.
@@ -20,6 +19,8 @@ class Robot:
         Initialise un objet de la classe Robot avec les paramètres donnés.
         """
        
+        self.x = constantes.x
+        self.y = constantes.y
         self.orientation = constantes.Orientation
         self.rayon_robot=constantes.Rayon_Robot
         self.rayon_roue = constantes.Rayon_Roue
@@ -58,6 +59,4 @@ class Robot:
             if(res<distance):
                 distance=res
         return distance
-    
-
     
