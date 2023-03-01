@@ -31,9 +31,7 @@ class Intermediaire :
         self.robot.orientation += delta_orientation #calcule la nouvelle orientation
     
     def get_distance(self):
-        vitesse_moyenne = (self.robot.vitesse_roue_gauche + self.robot.vitesse_roue_droite) / 2 
-        vitesse_moyenne = vitesse_moyenne / (2 * math.pi * self.robot.rayon_roue)
-        return vitesse_moyenne * Arene.dt 
+        return self.distance_parcourue 
 
     def get_angle(self):
         vitesse_angulaire = (self.robot.vitesse_roue_droite - self.robot.vitesse_roue_gauche) / (2 * math.pi * self.robot.distance_roues) #la vitesse de rotation du robot autour de son axe central
