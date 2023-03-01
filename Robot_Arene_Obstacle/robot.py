@@ -20,8 +20,6 @@ class Robot:
         Initialise un objet de la classe Robot avec les paramètres donnés.
         """
        
-        self.x = constantes.x
-        self.y = constantes.y
         self.orientation = constantes.Orientation
         self.rayon_robot=constantes.Rayon_Robot
         self.rayon_roue = constantes.Rayon_Roue
