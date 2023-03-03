@@ -9,9 +9,10 @@ class IA_Seq:
         self.liste[self.cur].start()
     def step(self):
         if self.liste[self.cur].stop() :
+            self.cur+=1
             if self.cur>=len(self.liste):
                 return 
-            self.cur+=1
+            
             self.liste[self.cur].start()
         
         self.liste[self.cur].step()
