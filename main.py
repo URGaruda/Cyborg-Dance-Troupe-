@@ -13,13 +13,13 @@ l_obstacle=[Obstacle(random.uniform(0,Arene.arene_longueur),random.uniform(0,Are
 dexter=Robot()
 
 terrain=Arene(dexter,l_obstacle)
-ruby=ia.IA(dexter,400.5,constantes.Vitesse)
+ruby=ia.IA(dexter,40.5,constantes.Vitesse)
 aff=Affichage(terrain)
 
 l_ia=[]
-for i in range(7):
+for i in range(9):
     if(i%2==0):
-        l_ia.append(ia.IA(dexter,55.5,constantes.Vitesse) )
+        l_ia.append(ia.IA(dexter,25.5,constantes.Vitesse) )
     else:
        l_ia.append( ia_tourner.Ia_Tourner(dexter,90,constantes.Vitesse) )
 ia_carre=ia_seq.IA_Seq(l_ia)

@@ -10,8 +10,8 @@ class Ia_Tourner:
         self.vitesse=vitesse
     def start(self):
         self.a_tourner=0.0
-        self.inter.tourner_gauche(self.vitesse)
+        self.inter.tourner_gauche(self.vitesse,self.vitesse)
     def step(self):
         self.a_tourner+=self.inter.get_angle()
     def stop(self):
-        return self.a_tourner>self.angle
+        return self.a_tourner>=self.angle

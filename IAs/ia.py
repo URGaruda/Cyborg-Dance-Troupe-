@@ -9,8 +9,9 @@ class IA:
         self.vitesse=vitesse
     def start(self):
         self.parcouru=0.0
-        self.inter.avancer(self.vitesse)
+        self.inter.avancer(self.vitesse,self.vitesse)
     def step(self):
         self.parcouru+=self.inter.get_distance()
+
     def stop(self):
-        return self.parcouru>self.distance 
+        return self.parcouru>=self.distance 

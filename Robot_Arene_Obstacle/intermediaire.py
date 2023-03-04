@@ -22,6 +22,6 @@ class Intermediaire :
         self.robot.set_vitesse(-vitesse,vitesse)
     def tourner_droite(self,vitesse):
         self.robot.set_vitesse(vitesse,-vitesse)
-    def avancer(self,vitesse):
+    def avancer(self,vitesseG,vitesseD):
         """Ajuste les vitesses afin que le robot puisse avancer """
-        self.robot.set_vitesse(vitesse,vitesse)
+        self.robot.set_vitesse(vitesseG,vitesseD)
