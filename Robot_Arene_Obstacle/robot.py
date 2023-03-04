@@ -82,15 +82,18 @@ class Robot:
                 y2 = (-A/B) * x2 - (C/B)
                 inter.append((x1,y1))
                 inter.append((x2,y2))
-        premier_point = inter[0]
-        px = premier_point[0]
-        py = premier_point[1]
-        res = math.sqrt((self.x - px)**2 + (self.y - py)**2)
+        if len(inter)==0:
+            return None
+        else:
+            premier_point = inter[0]
+            px = premier_point[0]
+            py = premier_point[1]
+            res = math.sqrt((self.x - px)**2 + (self.y - py)**2)
 
-        for (a,b) in inter[1:]:
-            res_int =  math.sqrt((self.x - a)**2 + (self.y - b)**2)
-            if res_int<res:
-                res= res_int
+            for (a,b) in inter[1:]:
+                res_int =  math.sqrt((self.x - a)**2 + (self.y - b)**2)
+                if res_int<res:
+                    res= res_int
             
         return res
 
