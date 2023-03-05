@@ -44,4 +44,46 @@ class Intermediaire :
         delta_orientation = vitesse_angulaire * delta_time #calcule le changement d'orientation
         self.angleP=delta_orientation
         self.robot.orientation += delta_orientation #calcule la nouvelle orientation
-    
+    def senseur_distance(self, obstacles):
+        angle = self.robot.orientation
+        inter=[]
+        m = math.tan(angle)  # calcul de la pente du capteur
+        A = m
+        B = -1
+        C = -(A*self.x)+self.y
+
+        for obs in obstacles:
+            xc = obs.x
+            yc = obs.y
+            r= obs.rayon
+            a = 1 + (A/B)**2
+            b = 2 * ((A/B) * (C/B) - xc)
+            c = xc**2 + (C/B - yc)**2 - r**2
+
+            delta = b**2 - 4*a*c
+
+            if delta == 0:
+                x= -b / (2*a)
+                y = (-A/B) * x - (C/B)
+                inter.append((x,y))
+            elif delta>0:
+                x1 = (-b + math.sqrt(delta)) / (2*a)
+                x2 = (-b - math.sqrt(delta)) / (2*a)
+                y1 = (-A/B) * x1 - (C/B)
+                y2 = (-A/B) * x2 - (C/B)
+                inter.append((x1,y1))
+                inter.append((x2,y2))
+        if len(inter)==0:
+            return None
+        else:
+            premier_point = inter[0]
+            px = premier_point[0]
+            py = premier_point[1]
+            res = math.sqrt((self.x - px)**2 + (self.y - py)**2)
+
+            for (a,b) in inter[1:]:
+                res_int =  math.sqrt((self.x - a)**2 + (self.y - b)**2)
+                if res_int<res:
+                    res= res_int
+            
+        return res
