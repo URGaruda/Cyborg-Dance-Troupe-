@@ -10,7 +10,7 @@ import time
 from Robot_Arene_Obstacle.robot import Robot
 from Robot_Arene_Obstacle.intermediaire import Intermediaire  
 
-l_obstacle=[Obstacle(random.uniform(0,Arene.arene_longueur),random.uniform(0,Arene.arene_largeur),random.uniform(2.9,10))for i in range (10) ]
+l_obstacle=[Obstacle(random.uniform(0,Arene.arene_longueur),random.uniform(0,Arene.arene_largeur),random.uniform(2.9,10))for i in range (30) ]
 dexter=Robot()
 inter=Intermediaire(dexter)
 
@@ -24,7 +24,7 @@ for i in range(9):
         l_ia.append(ia.IA(inter,25.5,random.uniform(constantes.Vitesse/2,constantes.Vitesse*2)) )
     else:
        l_ia.append( ia_tourner.Ia_Tourner(inter,90,random.uniform(constantes.Vitesse/2,constantes.Vitesse*2) ))
-ia_carre=ia_seq.IA_Seq(l_ia,l_obstacle)
+ia_carre=ia_seq.IA_Seq(l_ia)
 
 
 """
