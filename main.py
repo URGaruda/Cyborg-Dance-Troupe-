@@ -21,9 +21,9 @@ aff=Affichage(terrain)
 l_ia=[]
 for i in range(9):
     if(i%2==0):
-        l_ia.append(ia.IA(inter,25.5,random.uniform(constantes.Vitesse/2,constantes.Vitesse*2)) )
+        l_ia.append(ia.IA(inter,25.5,constantes.Vitesse) )
     else:
-       l_ia.append( ia_tourner.Ia_Tourner(inter,90,random.uniform(constantes.Vitesse/2,constantes.Vitesse*2) ))
+       l_ia.append( ia_tourner.Ia_Tourner(inter,90,constantes.Vitesse ))
 ia_carre=ia_seq.IA_Seq(l_ia)
 
 

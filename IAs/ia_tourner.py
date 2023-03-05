@@ -14,7 +14,7 @@ class Ia_Tourner:
         self.inter.tourner_gauche(self.vitesse)
     def step(self):
         self.a_tourner+=self.inter.get_angle()
-        if((self.a_tourner/self.angle)*100>=85.0) and self.limite==False :
+        if((self.a_tourner/self.angle)*100>=75.0) and self.limite==False :
             self.inter.tourner_gauche(self.vitesse/2)
             self.limite=True
     def stop(self):
