@@ -24,7 +24,7 @@ for i in range(9):
         l_ia.append(ia.IA(inter,25.5,random.uniform(constantes.Vitesse/2,constantes.Vitesse*2)) )
     else:
        l_ia.append( ia_tourner.Ia_Tourner(inter,90,random.uniform(constantes.Vitesse/2,constantes.Vitesse*2) ))
-ia_carre=ia_seq.IA_Seq(l_ia)
+ia_carre=ia_seq.IA_Seq(l_ia,l_obstacle)
 
 
 """
