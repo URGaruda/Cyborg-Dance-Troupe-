@@ -25,3 +25,5 @@ class Intermediaire :
     def avancer(self,vitesseG,vitesseD):
         """Ajuste les vitesses afin que le robot puisse avancer """
         self.robot.set_vitesse(vitesseG,vitesseD)
+    
+    

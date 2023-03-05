@@ -12,7 +12,7 @@ class IA_Seq:
             self.cur+=1
             if self.cur>=len(self.liste):
                 return 
-            
+            print("switch")
             self.liste[self.cur].start()
         
         self.liste[self.cur].step()

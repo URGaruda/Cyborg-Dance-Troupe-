@@ -8,10 +8,14 @@ class Ia_Tourner:
         self.inter=Intermediaire(dexter)
         self.angle=math.radians(angle)
         self.vitesse=vitesse
+        self.limite=False
     def start(self):
         self.a_tourner=0.0
-        self.inter.tourner_gauche(self.vitesse,self.vitesse)
+        self.inter.tourner_gauche(self.vitesse)
     def step(self):
         self.a_tourner+=self.inter.get_angle()
+        if((self.a_tourner/self.angle)*100>=85.0) and self.limite==False :
+            self.inter.tourner_gauche(self.vitesse/2)
+            self.limite=True
     def stop(self):
         return self.a_tourner>=self.angle
