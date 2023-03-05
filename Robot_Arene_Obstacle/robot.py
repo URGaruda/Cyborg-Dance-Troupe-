@@ -95,3 +95,4 @@ class Robot:
                     res= res_int
             
         return res
+    
