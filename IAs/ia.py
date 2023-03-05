@@ -5,7 +5,7 @@ class IA:
     def __init__(self,dexter,distance,vitesse):
         self.distance=distance
         self.parcouru=0.0
-        self.inter=Intermediaire(dexter)
+        self.inter=dexter
         self.vitesse=vitesse
         self.limite=False
     def start(self):

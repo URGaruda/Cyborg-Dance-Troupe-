@@ -7,21 +7,23 @@ from Robot_Arene_Obstacle.obstacle import Obstacle
 from Interfaces.affichage import Affichage
 import Autres.constantes as constantes 
 import time
-from Robot_Arene_Obstacle.robot import Robot 
+from Robot_Arene_Obstacle.robot import Robot
+from Robot_Arene_Obstacle.intermediaire import Intermediaire  
 
 l_obstacle=[Obstacle(random.uniform(0,Arene.arene_longueur),random.uniform(0,Arene.arene_largeur),random.uniform(2.9,10))for i in range (10) ]
 dexter=Robot()
+inter=Intermediaire(dexter)
 
 terrain=Arene(dexter,l_obstacle)
-ruby=ia.IA(dexter,40.5,constantes.Vitesse)
+ruby=ia.IA(inter,40.5,constantes.Vitesse)
 aff=Affichage(terrain)
 
 l_ia=[]
 for i in range(9):
     if(i%2==0):
-        l_ia.append(ia.IA(dexter,25.5,constantes.Vitesse) )
+        l_ia.append(ia.IA(inter,25.5,constantes.Vitesse) )
     else:
-       l_ia.append( ia_tourner.Ia_Tourner(dexter,90,constantes.Vitesse) )
+       l_ia.append( ia_tourner.Ia_Tourner(inter,90,constantes.Vitesse) )
 ia_carre=ia_seq.IA_Seq(l_ia)
 
 

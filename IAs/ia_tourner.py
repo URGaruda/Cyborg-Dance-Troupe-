@@ -5,7 +5,7 @@ from Robot_Arene_Obstacle.intermediaire import Intermediaire
 class Ia_Tourner:
     """Fait tourner le robot à gauche de angle """
     def __init__(self,dexter,angle,vitesse):
-        self.inter=Intermediaire(dexter)
+        self.inter=dexter
         self.angle=math.radians(angle)
         self.vitesse=vitesse
         self.limite=False
