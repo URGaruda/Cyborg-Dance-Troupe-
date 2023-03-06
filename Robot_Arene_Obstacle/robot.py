@@ -27,6 +27,7 @@ class Robot:
         self.distance_roues = constantes.Distance_Roues
         self.vitesse_roue_gauche = 0.0
         self.vitesse_roue_droite = 0.0
+        self.distance_sens=constantes.Distance_Max
         
     
     def set_vitesse(self, vitesse_roue_gauche, vitesse_roue_droite):
@@ -82,7 +83,7 @@ class Robot:
                 inter.append((x1,y1))
                 inter.append((x2,y2))
         if len(inter)==0:
-            return None
+            return -1
         else:
             premier_point = inter[0]
             px = premier_point[0]
@@ -93,6 +94,9 @@ class Robot:
                 res_int =  math.sqrt((self.x - a)**2 + (self.y - b)**2)
                 if res_int<res:
                     res= res_int
-            
-        return res
+            if res <= self.distance_sens :
+                return res 
+            else :
+                return -1 
+        
     
