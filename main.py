@@ -8,7 +8,7 @@ from Interfaces.affichage import Affichage
 import Autres.constantes as constantes 
 import time
 from Robot_Arene_Obstacle.robot import Robot
-from Robot_Arene_Obstacle.intermediaire import Intermediaire  
+from IAs.intermediaire import Intermediaire  
 
 l_obstacle=[Obstacle(random.uniform(0,Arene.arene_longueur),random.uniform(0,Arene.arene_largeur),random.uniform(2.9,10))for i in range (10) ]
 dexter=Robot()
