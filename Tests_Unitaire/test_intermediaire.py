@@ -5,3 +5,7 @@ class TestIntermediare(unittest.TestCase):
         self.i.get_distance()
     def test_get_angle(self):
         self.i.get_angle()
+    def test_tourner_gauche(self):
+        self.i.tourner_gauche(40)
+    def test_tourner_droite(self):
+        self.i.tourner_droite(54)
