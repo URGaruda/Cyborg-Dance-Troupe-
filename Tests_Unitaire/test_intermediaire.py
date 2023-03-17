@@ -9,3 +9,5 @@ class TestIntermediare(unittest.TestCase):
         self.i.tourner_gauche(40)
     def test_tourner_droite(self):
         self.i.tourner_droite(54)
+    def test_avancer(self):
+        self.i.avancer(30,50)
