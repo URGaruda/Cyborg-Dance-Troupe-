@@ -1,4 +1,4 @@
-import IAs.ia as ia 
+import Projet.IAs.ia as ia 
 import IAs.ia_tourner as ia_tourner
 import IAs.ia_seq as ia_seq 
 import random
