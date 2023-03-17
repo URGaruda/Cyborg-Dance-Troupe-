@@ -1,14 +1,14 @@
 import Projet.IAs.ia as ia 
-import IAs.ia_tourner as ia_tourner
-import IAs.ia_seq as ia_seq 
+import Projet.IAs.ia_tourner as ia_tourner
+import Projet.IAs.ia_seq as ia_seq 
 import random
-from Robot_Arene_Obstacle.arene import Arene
-from Robot_Arene_Obstacle.obstacle import Obstacle
-from Interfaces.affichage import Affichage
-import Autres.constantes as constantes 
+from Projet.Robot_Arene_Obstacle.arene import Arene
+from Projet.Robot_Arene_Obstacle.obstacle import Obstacle
+from Projet.Interfaces.affichage import Affichage
+import Projet.Autres.constantes as constantes 
 import time
-from Robot_Arene_Obstacle.robot import Robot
-from IAs.intermediaire import Intermediaire  
+from Projet.Robot_Arene_Obstacle.robot import Robot
+from Projet.IAs.intermediaire import Intermediaire  
 
 l_obstacle=[Obstacle(random.uniform(0,Arene.arene_longueur),random.uniform(0,Arene.arene_largeur),random.uniform(2.9,10))for i in range (10) ]
 dexter=Robot()
