@@ -2,6 +2,7 @@ import math
 from .robot import Robot
 from .obstacle import Obstacle 
 from random import *
+
 class Arene() : 
     arene_longueur=400.0 #longueur de l'arène 
     arene_largeur=400.0 # largeur de l'arène 
