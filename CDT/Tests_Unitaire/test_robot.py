@@ -1,6 +1,6 @@
 import unittest 
-from robot import Robot
-from obstacle import Obstacle 
+from CDT.Robot_Arene_Obstacle.robot import Robot
+from CDT.Robot_Arene_Obstacle.obstacle import Obstacle 
 class TestRobot(unittest.TestCase):
     def setUp(self):
         self.r=Robot(2,3,4.2,1,6,8)

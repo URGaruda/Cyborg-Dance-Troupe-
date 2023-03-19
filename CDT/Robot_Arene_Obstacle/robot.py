@@ -1,5 +1,5 @@
 import math
-import Autres.constantes as constantes 
+import CDT.Autres.constantes as constantes 
 class Robot:
     """
     Classe pour représenter un robot.

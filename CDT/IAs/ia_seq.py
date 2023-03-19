@@ -1,5 +1,5 @@
-import IAs.ia as ia
-import IAs.ia_tourner as ia_tourner 
+import CDT.IAs.ia as ia
+import CDT.IAs.ia_tourner as ia_tourner 
 from .intermediaire import Intermediaire 
 class IA_Seq:
     def __init__(self,liste_ia):
