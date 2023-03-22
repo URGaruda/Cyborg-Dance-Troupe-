@@ -1,5 +1,6 @@
 import math
 import CDT.Autres.constantes as constantes 
+import time 
 class Robot:
     """
     Classe pour représenter un robot.
@@ -20,6 +21,9 @@ class Robot:
         """
         self.x=constantes.x
         self.y=constantes.y
+        self.distanceP=0.0
+        self.angleP=0.0
+        self.tmp=0.0
         self.orientation = constantes.Orientation
         self.rayon_robot=constantes.Rayon_Robot
         self.rayon_roue = constantes.Rayon_Roue
@@ -28,20 +32,27 @@ class Robot:
         self.vitesse_roue_droite = 0.0
         
     
+    def start_time(self):
+        self.tmp=time.time()
+
     def set_vitesse(self, vitesse_roue_gauche, vitesse_roue_droite):
         """
         Définit les vitesses de la roue gauche et droite du robot.
         """
         self.vitesse_roue_gauche = vitesse_roue_gauche
         self.vitesse_roue_droite = vitesse_roue_droite
+        
 
-    def deplacement(self, delta_time):
+    def deplacement(self, dt):
         """
         Met à jour la position et l'orientation du robot en fonction des vitesses de ses roues.
         """
         #print(self.x," ",self.y)
+        tmp_act=time.time()
+        delta_time=tmp_act-self.tmp
         vitesse_moyenne = (self.vitesse_roue_gauche + self.vitesse_roue_droite) / 2 
         vitesse_moyenne = vitesse_moyenne / (2 * math.pi * self.rayon_roue) #vitesse lineaire moyenne
+        self.distanceP=vitesse_moyenne*delta_time
         delta_x = vitesse_moyenne * math.cos(self.orientation) * delta_time 
         delta_y = vitesse_moyenne * math.sin(self.orientation) * delta_time 
         self.x += delta_x
@@ -50,5 +61,7 @@ class Robot:
         
         vitesse_angulaire = (self.vitesse_roue_droite - self.vitesse_roue_gauche) / (2 * math.pi * self.distance_roues) #la vitesse de rotation du robot autour de son axe central
         delta_orientation = vitesse_angulaire * delta_time #calcule le changement d'orientation
+        self.angleP=delta_orientation
         self.orientation += delta_orientation #calcule la nouvelle orientation
+        self.tmp=time.time()
     

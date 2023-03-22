@@ -19,7 +19,7 @@ def make_line():
     aff=Affichage(terrain)
     #simulation 
     ruby.start()
-    inter.start_time()
+    dexter.start_time()
     while not ruby.stop() and not terrain.check_collision():
         terrain.arene_update()
         ruby.step()
@@ -41,7 +41,7 @@ def make_carre():
             l_ia.append( ia_tourner.Ia_Tourner(inter,90,constantes.Vitesse ))
     ia_carre=ia_seq.IA_Seq(l_ia)
     ia_carre.start()
-    inter.start_time()
+    dexter.start_time()
     while not ia_carre.stop() and not terrain.check_collision():
         terrain.arene_update()
         ia_carre.step()
