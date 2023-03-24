@@ -7,7 +7,7 @@ from CDT.Simulation.obstacle import Obstacle
 from CDT.Interfaces.affichage import Affichage
 import CDT.Weiter.constantes as constantes 
 import time
-from CDT.Robot_Arene_Obstacle.robot import Robot
+from CDT.Simulation.robot import Robot
 from CDT.IAs.intermediaire import Intermediaire  
 
 def make_line():
