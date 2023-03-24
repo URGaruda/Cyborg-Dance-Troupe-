@@ -1,4 +1,4 @@
-from CDT.Robot_Arene_Obstacle.arene import Arene
+from CDT.Simulation.arene import Arene
 import math
 import matplotlib.pyplot as plt
 import random
