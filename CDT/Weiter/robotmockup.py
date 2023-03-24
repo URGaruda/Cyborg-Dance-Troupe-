@@ -1,6 +1,6 @@
 import time
 import math
-import CDT.Autres.constantes as constantes 
+import CDT.Weiter.constantes as constantes 
 class Robotmockup:
     WHEEL_BASE_WIDTH         = 117  
     WHEEL_DIAMETER           = 66.5 

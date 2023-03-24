@@ -1,7 +1,7 @@
-from CDT.Robot_Arene_Obstacle.robot import Robot
-from CDT.Robot_Arene_Obstacle.arene import Arene
+from CDT.Simulation.robot import Robot
+from CDT.Simulation.arene import Arene
 import math
-import CDT.Autres.constantes as constantes
+import CDT.Weiter.constantes as constantes
 import time 
 
 # 1 rad/s = 57.2958	deg/s 
