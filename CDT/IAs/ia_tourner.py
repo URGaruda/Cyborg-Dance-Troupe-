@@ -1,4 +1,4 @@
-from CDT.Robot_Arene_Obstacle.robot import Robot
+from CDT.Simulation.robot import Robot
 import math
 import time
 from .intermediaire import Intermediaire

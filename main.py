@@ -2,12 +2,12 @@ import CDT.IAs.ia as ia
 import CDT.IAs.ia_tourner as ia_tourner
 import CDT.IAs.ia_seq as ia_seq 
 import random
-from CDT.Robot_Arene_Obstacle.arene import Arene
-from CDT.Robot_Arene_Obstacle.obstacle import Obstacle
+from CDT.Simulation.arene import Arene
+from CDT.Simulation.obstacle import Obstacle
 from CDT.Interfaces.affichage import Affichage
-import CDT.Autres.constantes as constantes 
+import CDT.Weiter.constantes as constantes 
 import time
-from CDT.Robot_Arene_Obstacle.robot import Robot
+from CDT.Simulation.robot import Robot
 from CDT.IAs.intermediaire import Intermediaire  
 
 l_obstacle=[Obstacle(random.uniform(0,Arene.arene_longueur),random.uniform(0,Arene.arene_largeur),random.uniform(2.9,10))for i in range (10) ]
