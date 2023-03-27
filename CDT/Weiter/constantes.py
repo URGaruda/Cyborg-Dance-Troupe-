@@ -8,5 +8,4 @@ Distance_Roues=5.8
 x=225.4
 y=95
 Vitesse=20
-Distance_Max=100
 """fin Robot"""

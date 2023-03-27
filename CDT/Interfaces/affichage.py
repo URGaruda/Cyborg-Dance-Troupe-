@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import random
 from tkinter import *
 class Affichage() :
+
     def __init__(self,arene):
         self.arene=arene
         self.fenetre=Tk()
