@@ -24,7 +24,7 @@ def initiate(nb_obstacle):
     global dexter
     dexter=Robot()
     global inter
-    inter=Intermediaire(dexter)
+    inter=Intermediaire(dexter,l_obstacle)
     global terrain
     terrain=Arene(dexter,l_obstacle)
     global aff 
@@ -83,7 +83,7 @@ def create_loop(ia,condition): #en phase de test
     global main_ia
     main_ia=loop
 
-initiate(0)
+initiate(20)
 create_triangle_equilateral(100)
 main_ia.start()
 dexter.start_time()
@@ -94,46 +94,3 @@ while not main_ia.stop() and not terrain.check_collision():
     main_ia.step()
     aff.updateAffichage(dexter,l_obstacle)
 
-
-
-def make_line():
-    l_obstacle=[Obstacle(random.uniform(0,Arene.arene_longueur),random.uniform(0,Arene.arene_largeur),random.uniform(2.9,10))for i in range (10) ]
-    dexter=Robot()
-    inter=Intermediaire(dexter)
-    terrain=Arene(dexter,l_obstacle)
-    ruby=ia.IA(inter,40.5,constantes.Vitesse)
-    aff=Affichage(terrain)
-    #simulation 
-    ruby.start()
-    dexter.start_time()
-    while not ruby.stop() and not terrain.check_collision():
-        terrain.arene_update()
-        ruby.step()
-        aff.updateAffichage(dexter,l_obstacle)
-
-def make_carre():
-    l_obstacle=[Obstacle(random.uniform(0,Arene.arene_longueur),random.uniform(0,Arene.arene_largeur),random.uniform(2.9,10))for i in range (10) ]
-    dexter=Robot()
-    inter=Intermediaire(dexter)
-
-    terrain=Arene(dexter,l_obstacle)
-    aff=Affichage(terrain)
-
-    l_ia=[]
-    for i in range(9):
-        if(i%2==0):
-            l_ia.append(ia.IA(inter,45.5,constantes.Vitesse) )
-        else:
-            l_ia.append( ia_tourner.Ia_Tourner(inter,90,constantes.Vitesse ))
-    ia_carre=ia_seq.IA_Seq(l_ia)
-    ia_carre.start()
-    dexter.start_time()
-    
-    while not ia_carre.stop() and not terrain.check_collision():
-        terrain.arene_update()
-        ia_carre.step()
-        aff.updateAffichage(dexter,l_obstacle)
-
-
-    
-        

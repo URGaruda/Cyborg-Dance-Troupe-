@@ -30,6 +30,7 @@ class Robot:
         self.distance_roues = constantes.Distance_Roues
         self.vitesse_roue_gauche = 0.0
         self.vitesse_roue_droite = 0.0
+        self.distance_sens=constantes.Distance_Max
         
     
     def start_time(self):
@@ -106,6 +107,7 @@ class Robot:
                 res_int =  math.sqrt((self.x - a)**2 + (self.y - b)**2)
                 if res_int<res:
                     res= res_int
+            print(res)
             if res <= self.distance_sens :
                 return res 
             else :
