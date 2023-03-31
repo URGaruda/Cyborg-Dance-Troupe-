@@ -50,6 +50,7 @@ class Robot:
         #print(self.x," ",self.y)
         tmp_act=time.time()
         delta_time=tmp_act-self.tmp
+        #print("dt =",delta_time)
         vitesse_moyenne = (self.vitesse_roue_gauche + self.vitesse_roue_droite) / 2 
         vitesse_moyenne = vitesse_moyenne / (2 * math.pi * self.rayon_roue) #vitesse lineaire moyenne
         self.distanceP=vitesse_moyenne*delta_time
@@ -62,6 +63,6 @@ class Robot:
         vitesse_angulaire = (self.vitesse_roue_droite - self.vitesse_roue_gauche) / (2 * math.pi * self.distance_roues) #la vitesse de rotation du robot autour de son axe central
         delta_orientation = vitesse_angulaire * delta_time #calcule le changement d'orientation
         self.angleP=delta_orientation
-        self.orientation += delta_orientation #calcule la nouvelle orientation
+        self.orientation += delta_orientation #calcule la nouvelle orientation 
         self.tmp=time.time()
     

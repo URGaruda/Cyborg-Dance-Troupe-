@@ -6,6 +6,7 @@ from CDT.Simulation.arene import Arene
 from CDT.Simulation.obstacle import Obstacle
 from CDT.Interfaces.affichage import Affichage
 import CDT.Weiter.constantes as constantes 
+import CDT.IAs.ia_loop as ia_loop 
 import time
 from CDT.Simulation.robot import Robot
 from CDT.IAs.intermediaire import Intermediaire  
@@ -42,10 +43,11 @@ def make_carre():
     ia_carre=ia_seq.IA_Seq(l_ia)
     ia_carre.start()
     dexter.start_time()
+    
     while not ia_carre.stop() and not terrain.check_collision():
         terrain.arene_update()
         ia_carre.step()
         aff.updateAffichage(dexter,l_obstacle)
-        aff.fenetre.update()
+        
         
 make_carre() 
