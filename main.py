@@ -78,13 +78,14 @@ def create_triangle_equilateral(distance):
     global main_ia
     main_ia=ia_equi
 
+
 def create_loop(ia,condition): #en phase de test 
     loop=ia_loop.IA_Loop(ia,condition)
     global main_ia
     main_ia=loop
 
-initiate(10)
-create_carre(100)
+initiate(0)
+create_triangle_equilateral(100)
 main_ia.start()
 dexter.start_time()
     

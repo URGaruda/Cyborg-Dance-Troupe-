@@ -25,7 +25,7 @@ class Affichage() :
         if len(self.liste_fleche)>0:
             self.acanvas.delete(self.liste_fleche[-1])
             self.liste_fleche.pop()
-        self.acanvas.create_oval((robot.x + ray_r)*2.5, (robot.y + ray_r)*2.5,( robot.x - ray_r)*2.5, (robot.y - ray_r)*2.5, fill='yellow')
+        self.acanvas.create_oval((robot.x + ray_r)*2.5, (robot.y + ray_r)*2.5,( robot.x - ray_r)*2.5, (robot.y - ray_r)*2.5, fill='black')
         self.liste_objet.append(self.acanvas.create_oval((robot.x + ray_r)*2.5, (robot.y + ray_r)*2.5,( robot.x - ray_r)*2.5, (robot.y - ray_r)*2.5, fill='red'))
         
         x1= robot.x *2.5
