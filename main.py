@@ -95,3 +95,4 @@ while not main_ia.stop() and not terrain.check_collision():
     main_ia.step()
     aff.updateAffichage(dexter,l_obstacle)
 
+#test commentaire pour tme solo
