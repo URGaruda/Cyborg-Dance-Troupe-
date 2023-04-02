@@ -39,4 +39,9 @@ class Arene() :
         print("Obstacle ajouté")
     def arene_update(self):
         self.robot.deplacement(self.dt)
+<<<<<<< HEAD
         print("robot : x=",self.robot.x," y=",self.robot.y)
+=======
+        
+        
+>>>>>>> Dev

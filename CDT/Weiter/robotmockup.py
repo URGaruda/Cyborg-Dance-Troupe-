@@ -52,4 +52,9 @@ class Robotmockup:
     
     def deplacement(self,dt):
         self.x=self.x+20*dt+4
+<<<<<<< HEAD
         self.y=self.y+20*dt+4
+=======
+        self.y=self.y+20*dt+4
+    
+>>>>>>> Dev

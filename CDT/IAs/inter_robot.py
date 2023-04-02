@@ -34,15 +34,25 @@ class Inter_Robot:
     def start_time(self):
         self.tmp=time.time()
         
+<<<<<<< HEAD
     def get_distance_traveled(self):
+=======
+    def update_distance_traveled(self):
+>>>>>>> Dev
         """ Calcule la distance en mètre qu'à parcouru le robot à chaque appel de get_motor_position """
         left_position, right_position = self.robot.get_motor_position()
         left_distance = (left_position / 360.0) * self.robot.WHEEL_CIRCUMFERENCE
         right_distance = (right_position / 360.0) * self.robot.WHEEL_CIRCUMFERENCE
         distance_traveled = (left_distance + right_distance) / 2.0 
         self.distanceP = distance_traveled / 1000.0 
+<<<<<<< HEAD
 
     def get_angle(self):
+=======
+        
+
+    def update_angle(self):
+>>>>>>> Dev
         """Retourne l'angle en radians qu'a pris le robot"""
         position_gauche, position_droite = self.get_motor_position()
         angle = math.radians((position_gauche + position_droite) / 2)
@@ -53,4 +63,9 @@ class Inter_Robot:
         Met à jour la position et l'orientation du robot en fonction des vitesses de ses roues.
         """
         self.get_angle()
+<<<<<<< HEAD
         self.get_distance_traveled()
+=======
+        self.get_distance_traveled()
+
+>>>>>>> Dev
