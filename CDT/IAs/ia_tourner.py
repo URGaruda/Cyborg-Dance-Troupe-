@@ -8,7 +8,6 @@ class Ia_Tourner:
         self.vitesse=vitesse/7
         self.limite=False
     def start(self):
-        print("ok")
         self.a_tourner=0.0
         self.inter.tourner_gauche(self.vitesse)
     def step(self):
