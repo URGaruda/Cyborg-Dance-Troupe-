@@ -7,19 +7,12 @@ import time
 """Intermediaire entre les ia et le robot """
 class Intermediaire :
 
-<<<<<<< HEAD
-    def __init__(self,robot):
-=======
     def __init__(self,robot,obstacles):
->>>>>>> Dev
         self.robot=robot
         self.tmp=0.0
         self.distanceP=0.0
         self.angleP=0
-<<<<<<< HEAD
-=======
         self.obstacles=obstacles
->>>>>>> Dev
     def get_distance(self):
         return self.robot.distanceP
 

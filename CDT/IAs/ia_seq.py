@@ -19,10 +19,4 @@ class IA_Seq:
 
     def stop(self):
         return self.cur>=len(self.liste)
-<<<<<<< HEAD
     
-=======
-    
-    
-        
->>>>>>> Dev

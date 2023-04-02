@@ -1,6 +1,6 @@
-from CDT.Robot_Arene_Obstacle.arene import Arene 
+from Simulation.arene import Arene 
 import math
-from CDT.Robot_Arene_Obstacle.robot import Robot 
+from Simulation.robot import Robot 
 import random
 from OpenGL.GL import *
 from OpenGL.GLUT import *
