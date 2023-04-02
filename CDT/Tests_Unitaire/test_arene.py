@@ -1,5 +1,5 @@
 import unittest 
-from Robot_Arene_Obstacle.arene import Arene
+from Simulation.arene import Arene
 
 class TestArene(unittest.TestCase):
     def test_check_collision(self):
