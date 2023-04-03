@@ -203,8 +203,8 @@ def create_bin(mot):
                     l_ia.append( ia_tourner.Ia_Tourner(inter,90,constantes.Vitesse,True))  
         else :
             verif=1
-            l_ia.append( ia_tourner.Ia_Tourner(inter,90,constantes.Vitesse,True))
-            l_ia.append(ia.IA(inter,90,constantes.Vitesse,False))
+            l_ia.append( ia_tourner.Ia_Tourner(inter,90,constantes.Vitesse,False))
+            l_ia.append(ia.IA(inter,90,constantes.Vitesse,True))
         if verif == 1 :
             l_ia.append(ia_tourner.Ia_Tourner(inter,180,constantes.Vitesse ,True))
             l_ia.append(ia.IA(inter,70,constantes.Vitesse,False))
@@ -265,7 +265,7 @@ while not main_ia.stop() and not terrain.check_collision():
 #question 2.5 
 
 initiate(0)
-create_bin("001110")
+create_bin("100110")
 main_ia.start()
 dexter.start_time()
 dexter.dessine(True)
