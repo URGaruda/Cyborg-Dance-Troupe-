@@ -20,7 +20,8 @@ l_ia=[]
 main_ia=None
 def initiate(nb_obstacle):
     global l_obstacle
-    l_obstacle=[Obstacle(random.uniform(0,Arene.arene_longueur),random.uniform(0,Arene.arene_largeur),random.uniform(2.9,10))for i in range (nb_obstacle) ]
+    #l_obstacle=[Obstacle(random.uniform(0,Arene.arene_longueur),random.uniform(0,Arene.arene_largeur),random.uniform(2.9,10))for i in range (nb_obstacle) ]
+    l_obstacle=[Obstacle(124,155,5.5),Obstacle(174,155,5.5),Obstacle(124,205,5.5),Obstacle(174,205,5.5)]
     global dexter
     dexter=Robot()
     global inter
@@ -83,15 +84,37 @@ def create_loop(ia,condition): #en phase de test
     loop=ia_loop.IA_Loop(ia,condition)
     global main_ia
     main_ia=loop
-
+"""
 initiate(10)
 create_carre(100)
 main_ia.start()
 dexter.start_time()
-    
+
 while not main_ia.stop() and not terrain.check_collision():
     
     terrain.arene_update()
     main_ia.step()
+    aff.updateAffichage(dexter,l_obstacle)
+
+l_obs=[Obstacle(124,155,5.5),Obstacle(174,155,5.5),Obstacle(124,205,5.5),Obstacle(174,205,5.5)]
+"""
+# tme solo 
+
+def initiate_sol(nb_obstacle):
+    global l_obstacle
+    #l_obstacle=[Obstacle(random.uniform(0,Arene.arene_longueur),random.uniform(0,Arene.arene_largeur),random.uniform(2.9,10))for i in range (nb_obstacle) ]
+    l_obstacle=[Obstacle(124,155,5.5),Obstacle(174,155,5.5),Obstacle(124,205,5.5),Obstacle(174,205,5.5)]
+    global dexter
+    dexter=Robot()
+    global inter
+    inter=Intermediaire(dexter,l_obstacle)
+    global terrain
+    terrain=Arene(dexter,l_obstacle)
+    global aff 
+    aff=Affichage(terrain)
+initiate_sol(0)
+while not terrain.check_collision():
+    
+    terrain.arene_update()
     aff.updateAffichage(dexter,l_obstacle)
 
