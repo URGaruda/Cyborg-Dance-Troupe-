@@ -1,0 +1,27 @@
+exo 1:
+question 1:
+on crée une liste d'obstacles contenant 4 obstacles dans le main 
+et dans la fonction initiate on modifie l_obs.
+
+question 2:
+on va dans Interfae, affichage, la fonction update affichage et on modifie fill='green' en fill='orange'
+
+
+question3:
+Dans le fichier robot on y cree une fonction dessine qui renvoie true ou false.
+et dans update affichage on ajoute:
+ if(robot.dessine(y)==True):
+            self.acanvas.create_oval((robot.x + ray_r)*2.5, (robot.y + ray_r)*2.5,( robot.x - ray_r)*2.5, (robot.y - ray_r)*2.5, fill='black')
+avec y qui vaut 0 ou 1
+
+
+Exercice 2:
+ 2.1 on utilise la fonction create-line.
+ 2.2 on utilise la fonction create_rectangle present dans le fichier main.
+ 2.3on utilise la fonction create_dessin dans le main.
+ 2.5 on utlise ia_strategie2 dans le main.
+
+ Exercice 3:
+ 3. creer une classe emetteur dans le module simulation et ajouter une fonction getsignal dans robot.
+ 
+

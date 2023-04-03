@@ -114,3 +114,9 @@ class Robot:
                 return res 
             else :
                 return -1
+            
+    def dessine(self,bool):
+        return bool
+    
+    def getSignal(self,emet):
+         return math.sqrt((emet.x - self.x) ** 2 + (emet.y - emet.y) ** 2)
