@@ -2,13 +2,15 @@ from .intermediaire import Intermediaire
 import math
 
 class IA:
-    def __init__(self,dexter,distance,vitesse):
+    def __init__(self,dexter,distance,vitesse,b):
         self.distance=distance
         self.parcouru=0.0
         self.inter=dexter
         self.vitesse=vitesse
         self.limite=False
+        self.b=b
     def start(self):
+        self.inter.robot.dessine(self.b)
         self.parcouru=0.0
         self.inter.avancer(self.vitesse,self.vitesse)
     def step(self):
