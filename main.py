@@ -20,8 +20,7 @@ l_ia=[]
 main_ia=None
 def initiate(nb_obstacle):
     global l_obstacle
-    #l_obstacle=[Obstacle(random.uniform(0,Arene.arene_longueur),random.uniform(0,Arene.arene_largeur),random.uniform(2.9,10))for i in range (nb_obstacle) ]
-    l_obstacle=[Obstacle(124,155,5.5),Obstacle(174,155,5.5),Obstacle(124,205,5.5),Obstacle(174,205,5.5)]
+    l_obstacle=[Obstacle(random.uniform(0,Arene.arene_longueur),random.uniform(0,Arene.arene_largeur),random.uniform(2.9,10))for i in range (nb_obstacle) ]
     global dexter
     dexter=Robot()
     global inter
@@ -99,22 +98,41 @@ while not main_ia.stop() and not terrain.check_collision():
 l_obs=[Obstacle(124,155,5.5),Obstacle(174,155,5.5),Obstacle(124,205,5.5),Obstacle(174,205,5.5)]
 """
 # tme solo 
-
+#question 1.1
 def initiate_sol(nb_obstacle):
     global l_obstacle
     #l_obstacle=[Obstacle(random.uniform(0,Arene.arene_longueur),random.uniform(0,Arene.arene_largeur),random.uniform(2.9,10))for i in range (nb_obstacle) ]
     l_obstacle=[Obstacle(124,155,5.5),Obstacle(174,155,5.5),Obstacle(124,205,5.5),Obstacle(174,205,5.5)]
     global dexter
     dexter=Robot()
+    dexter.x=149
+    dexter.y=175
     global inter
     inter=Intermediaire(dexter,l_obstacle)
     global terrain
     terrain=Arene(dexter,l_obstacle)
     global aff 
     aff=Affichage(terrain)
-initiate_sol(0)
-while not terrain.check_collision():
-    
+
+def create_hexagone(distance):
+    global l_ia
+    l_ia.append(ia_tourner.Ia_Tourner(inter,60,constantes.Vitesse ))
+    for i in range(11):
+        if(i%2==0):
+            l_ia.append(ia.IA(inter,distance,constantes.Vitesse) )
+        else:
+            l_ia.append( ia_tourner.Ia_Tourner(inter,60,constantes.Vitesse ))
+    ia_equi=ia_seq.IA_Seq(l_ia)
+    global main_ia
+    main_ia=ia_equi
+
+initiate(0)
+create_hexagone(40)
+main_ia.start()
+dexter.start_time()
+dexter.dessine(True)
+while not main_ia.stop() and not terrain.check_collision():
+    main_ia.step()
     terrain.arene_update()
     aff.updateAffichage(dexter,l_obstacle)
 

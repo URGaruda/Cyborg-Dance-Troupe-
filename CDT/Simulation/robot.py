@@ -31,6 +31,7 @@ class Robot:
         self.vitesse_roue_gauche = 0.0
         self.vitesse_roue_droite = 0.0
         self.distance_sens=constantes.Distance_Max
+        self.b=False
         
     
     def start_time(self):
@@ -42,6 +43,10 @@ class Robot:
         """
         self.vitesse_roue_gauche = vitesse_roue_gauche
         self.vitesse_roue_droite = vitesse_roue_droite
+
+    #question 1.3 
+    def dessine(self,b):
+        self.b=b
         
 
     def deplacement(self, dt):
