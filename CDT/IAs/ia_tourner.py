@@ -2,12 +2,14 @@ import math
 import time
 class Ia_Tourner:
     """Fait tourner le robot à gauche de angle """
-    def __init__(self,dexter,angle,vitesse):
+    def __init__(self,dexter,angle,vitesse,b):
         self.inter=dexter
         self.angle=math.radians(angle)
         self.vitesse=vitesse/7
         self.limite=False
+        self.b=b
     def start(self):
+        self.inter.robot.dessine(self.b)
         self.a_tourner=0.0
         self.inter.tourner_gauche(self.vitesse)
     def step(self):
