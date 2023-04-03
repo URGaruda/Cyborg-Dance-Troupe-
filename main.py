@@ -204,7 +204,7 @@ def create_bin(mot):
         else :
             verif=1
             l_ia.append( ia_tourner.Ia_Tourner(inter,90,constantes.Vitesse,False))
-            l_ia.append(ia.IA(inter,90,constantes.Vitesse,True))
+            l_ia.append(ia.IA(inter,70,constantes.Vitesse,True))
         if verif == 1 :
             l_ia.append(ia_tourner.Ia_Tourner(inter,180,constantes.Vitesse ,True))
             l_ia.append(ia.IA(inter,70,constantes.Vitesse,False))
