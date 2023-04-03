@@ -83,11 +83,38 @@ def create_loop(ia,condition): #en phase de test
     loop=ia_loop.IA_Loop(ia,condition)
     global main_ia
     main_ia=loop
+def crerr_1(distance):
+    global l_ia
+    l_ia.append(ia_tourner.Ia_Tourner(inter,90,constantes.Vitesse ))
+    l_ia.append(ia.IA(inter,distance,constantes.Vitesse) )
+    ia_equi=ia_seq.IA_Seq(l_ia)
+    global main_ia
+    main_ia=ia_equi
+
+def crerr_0():
+    longueur=70
+    largeur=35
+    global l_ia
+    b=True
+    for i in range(7):
+        if(i%2==0):
+            if(b):
+                l_ia.append(ia.IA(inter,largeur,constantes.Vitesse) )
+                b=False
+            else:
+                l_ia.append(ia.IA(inter,longueur,constantes.Vitesse) )
+                b=True
+
+        else:
+            l_ia.append( ia_tourner.Ia_Tourner(inter,90,constantes.Vitesse ))
+    ia_rect=ia_seq.IA_Seq(l_ia)
+    global main_ia
+    main_ia=ia_rect
+
+
 
 initiate(0)
-for i in range (5):
-    create_line(100) #Ex2Q2
-    create_rectangle(100,50) #Ex2Q1
+crerr_0()
 
 main_ia.start()
 dexter.start_time()
