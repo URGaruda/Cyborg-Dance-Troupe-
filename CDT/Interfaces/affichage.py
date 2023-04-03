@@ -34,5 +34,5 @@ class Affichage() :
         y2 = y1 + ray_r *2.5 * math.sin(robot.orientation)
         self.liste_fleche.append(self.acanvas.create_line(x1,y1,x2,y2,arrow=LAST,fill='blue'))
         for o in obstacles:
-            self.acanvas.create_oval((o.x + o.rayon)*2.5,(o.y + o.rayon)*2.5,(o.x - o.rayon)*2.5,( o.y - o.rayon)*2.5, fill='green')
+            self.acanvas.create_oval((o.x + o.rayon)*2.5,(o.y + o.rayon)*2.5,(o.x - o.rayon)*2.5,( o.y - o.rayon)*2.5, fill='orange')
         self.fenetre.update()
