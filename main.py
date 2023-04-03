@@ -84,8 +84,11 @@ def create_loop(ia,condition): #en phase de test
     global main_ia
     main_ia=loop
 
-initiate(4)
-create_triangle_equilateral(100)
+initiate(0)
+for i in range (5):
+    create_line(100) #Ex2Q2
+    create_rectangle(100,50) #Ex2Q1
+
 main_ia.start()
 dexter.start_time()
     

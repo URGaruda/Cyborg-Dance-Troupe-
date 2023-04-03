@@ -11,6 +11,7 @@ import CDT.IAs.ia_loop as ia_loop
 import time
 from CDT.Simulation.robot import Robot
 from CDT.IAs.intermediaire import Intermediaire 
+"Ex1Q1"
 root = tk.Tk()
 root.geometry("400x400")
 
@@ -28,3 +29,5 @@ root.mainloop()
 
 "Ex1Q2: Modifier le fill des obstacles en orange dans affichage"
 
+"Ex2Q1:Je n'ai pas utilisé la fonction dessin mais la fonction create_rectangle qui se trouve dans mon main, pour que le dessin aille dans le bon sens, j'ai du modifier l'orientation qui se trouve dans les Constantes dans Weiter"
+"Ex1Q2:Pareil que la 1ère sauf que j'ai du utliser la fonction create_line"
