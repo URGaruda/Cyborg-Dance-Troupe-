@@ -85,6 +85,7 @@ def create_loop(ia,condition): #en phase de test
     main_ia=loop
 
 initiate(0)
+
 create_triangle_equilateral(100)
 main_ia.start()
 dexter.start_time()

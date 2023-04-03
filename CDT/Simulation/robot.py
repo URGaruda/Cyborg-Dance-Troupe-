@@ -31,6 +31,7 @@ class Robot:
         self.vitesse_roue_gauche = 0.0
         self.vitesse_roue_droite = 0.0
         self.distance_sens=constantes.Distance_Max
+        self.crayon=False
         
     
     def start_time(self):
@@ -114,3 +115,7 @@ class Robot:
                 return res 
             else :
                 return -1
+    
+    def dessine(self,bool):
+        self.crayon=bool
+

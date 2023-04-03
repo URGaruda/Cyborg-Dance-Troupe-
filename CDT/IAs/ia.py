@@ -16,5 +16,7 @@ class IA:
         if((self.parcouru/self.distance)*100>=85.0) and self.limite==False :
             self.inter.avancer(self.vitesse/1.3,self.vitesse/1.3)
             self.limite=True
+        
+       
     def stop(self):
         return self.parcouru>=self.distance 
