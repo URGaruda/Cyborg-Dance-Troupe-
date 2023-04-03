@@ -48,10 +48,32 @@ def create_hexagone(distance):
     global main_ia
     main_ia = ia_hex
 
+def create_un(distance):
+    l_ia = []
+    l_ia.append(ia_tourner.Ia_Tourner(inter, 90, constantes.Vitesse))
+    l_ia.append(ia.IA(inter, distance, constantes.Vitesse))
+    l_ia.append(ia_tourner.Ia_Tourner(inter, -90, constantes.Vitesse))
+    ia_line = ia_seq.IA_Seq(l_ia)
+    global main_ia
+    main_ia = ia_line
+
+def create_zero(longueur, largeur):
+    l_ia = []
+    l_ia.append(ia_tourner.Ia_Tourner(inter, 90, constantes.Vitesse))
+    for i in range(2):
+        l_ia.append(ia.IA(inter, longueur, constantes.Vitesse))
+        l_ia.append(ia_tourner.Ia_Tourner(inter, 90, constantes.Vitesse))
+        l_ia.append(ia.IA(inter, largeur, constantes.Vitesse))
+        l_ia.append(ia_tourner.Ia_Tourner(inter, 90, constantes.Vitesse))
+    ia_rect = ia_seq.IA_Seq(l_ia)
+    global main_ia
+    main_ia = ia_rect
+
+
+
 
 initiate()
-
-create_hexagone(50)
+create_zero(100,50)
 main_ia.start()
 dexter.start_time()
     
