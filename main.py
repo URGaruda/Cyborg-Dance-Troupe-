@@ -113,8 +113,10 @@ def crerr_0():
 
 
 
-initiate(4)
+initiate(0)
 crerr_1(50)
+crerr_0()
+
 
 main_ia.start()
 dexter.start_time()

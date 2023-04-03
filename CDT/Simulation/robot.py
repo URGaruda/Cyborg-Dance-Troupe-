@@ -32,6 +32,30 @@ class Robot:
         self.vitesse_roue_droite = 0.0
         self.distance_sens=constantes.Distance_Max
         self.crayon=constantes.Crayon
+    
+class Emetteur:
+    def __init__(self, x, y, z, puissance):
+        self.x = x
+        self.y = y
+        self.z = z
+        self.puissance = puissance
+        
+    def get_signal(self):
+        return (self.x, self.y, self.z, self.puissance)
+        
+
+class Recepteur:
+    def __init__(self, x, y, z):
+        self.x = x
+        self.y = y
+        self.z = z
+        
+    def recevoir(self, signal):
+        x_emetteur, y_emetteur, z_emetteur, puissance = signal
+        distance = math.sqrt((self.x - x_emetteur)**2 + (self.y - y_emetteur)**2 + (self.z - z_emetteur)**2)
+        intensite = puissance / (distance ** 2)
+        return intensite
+
         
     
     def start_time(self):
@@ -119,6 +143,7 @@ class Robot:
                 return res 
             else :
                 return -1
+        
             
             
         

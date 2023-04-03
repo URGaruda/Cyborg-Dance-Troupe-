@@ -32,3 +32,5 @@ root.mainloop()
 
 "Ex2Q1:Crerr la fonction crerr_1 dans le main"
 "Ex1Q2: Crerr la fonction creer_0 dans le main"
+"Ex3Q1: Creer deux classe, 1 emeteur et un recepteur dans le fichier robot, ajouter la fonction get_signal qui renvoi le signal de l'emmeteur et la fonction recevoir qui recoit l'intensité du signal"
+
