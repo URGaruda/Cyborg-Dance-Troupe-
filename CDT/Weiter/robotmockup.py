@@ -17,9 +17,14 @@ class Robotmockup:
         self.MOTOR_LEFT= constantes.Vitesse_Gauche
         self.MOTOR_RIGHT = constantes.Vitesse_Droite
         self.rayon_robot=Robotmockup.WHEEL_BASE_WIDTH/10
-        self.x=x
-        self.y=y
+        self.x=constantes.x
+        self.y=constantes.y
+        self.dt=0.0 
+        self.tmp=0.0
 
+
+    def start_time(self):
+        self.tmp=time.time()
     
     def set_led(self, led, red = 0, green = 0, blue = 0):
         pass
@@ -33,6 +38,10 @@ class Robotmockup:
 
 
     def get_motor_position(self):
+        tmp_act=time.time()
+        delta_time=tmp_act-self.tmp
+        self.dt=delta_time
+        self.tmp=time.time()
         return(73.4,46.8)
    
     def offset_motor_encoder(self, port, offset):
