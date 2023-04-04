@@ -54,5 +54,5 @@ class Inter_Robot:
         Met à jour la position et l'orientation du robot en fonction des vitesses de ses roues.
         """
         self.get_angle()
-        self.get_distance_traveled()
+        self.update_distance_traveled(self)
 

@@ -79,7 +79,7 @@ def create_triangle_equilateral(distance):
     main_ia=ia_equi
 
 initiate(0)
-create_triangle_equilateral(100)
+create_line(10)
 main_ia.start()
 dexter.start_time()
     
