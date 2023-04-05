@@ -78,6 +78,17 @@ def create_triangle_equilateral(distance):
     global main_ia
     main_ia=ia_equi
 
+def create_hexagone(distance):
+    global l_ia
+    l_ia.append(ia_tourner.Ia_Tourner(inter,60,constantes.Vitesse ))
+    for i in range(11):
+        if(i%2==0):
+            l_ia.append(ia.IA(inter,distance,constantes.Vitesse) )
+        else:
+            l_ia.append( ia_tourner.Ia_Tourner(inter,60,constantes.Vitesse ))
+    ia_equi=ia_seq.IA_Seq(l_ia)
+    global main_ia
+    main_ia=ia_equi
 
 def create_loop(ia,condition): #en phase de test 
     loop=ia_loop.IA_Loop(ia,condition)
@@ -85,7 +96,7 @@ def create_loop(ia,condition): #en phase de test
     main_ia=loop
 
 initiate(0)
-create_triangle_equilateral(100)
+create_carre(150)
 main_ia.start()
 dexter.start_time()
     

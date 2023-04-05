@@ -21,8 +21,6 @@ class Robot:
         """
         self.x=constantes.x
         self.y=constantes.y
-        self.distanceP=0.0
-        self.angleP=0.0
         self.tmp=0.0
         self.orientation = constantes.Orientation
         self.rayon_robot=constantes.Rayon_Robot
@@ -54,8 +52,7 @@ class Robot:
         #print("dt =",delta_time)
         vitesse_moyenne = (self.vitesse_roue_gauche + self.vitesse_roue_droite) / 2 
         vitesse_moyenne = vitesse_moyenne / (2 * math.pi * self.rayon_roue) #vitesse lineaire moyenne
-        self.distanceP=vitesse_moyenne*delta_time
-        delta_x = vitesse_moyenne * math.cos(self.orientation) * delta_time 
+        delta_x = vitesse_moyenne * math.cos(self.orientation) * delta_time
         delta_y = vitesse_moyenne * math.sin(self.orientation) * delta_time 
         self.x += delta_x
         self.y += delta_y
@@ -63,7 +60,6 @@ class Robot:
         
         vitesse_angulaire = (self.vitesse_roue_droite - self.vitesse_roue_gauche) / (2 * math.pi * self.distance_roues) #la vitesse de rotation du robot autour de son axe central
         delta_orientation = vitesse_angulaire * delta_time #calcule le changement d'orientation
-        self.angleP=delta_orientation
         self.orientation += delta_orientation #calcule la nouvelle orientation 
         self.tmp=time.time()
    

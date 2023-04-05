@@ -9,12 +9,14 @@ class IA:
         self.vitesse=vitesse
         self.limite=False
     def start(self):
-        self.parcouru=0.0
+        self.inter.distanceP=0.0
+        self.inter.start_time_dist()
         self.inter.avancer(self.vitesse,self.vitesse)
     def step(self):
-        self.parcouru+=self.inter.get_distance()
+        self.parcouru=self.inter.get_distance()
         if((self.parcouru/self.distance)*100>=85.0) and self.limite==False :
             self.inter.avancer(self.vitesse/1.3,self.vitesse/1.3)
             self.limite=True
+        
     def stop(self):
         return self.parcouru>=self.distance 

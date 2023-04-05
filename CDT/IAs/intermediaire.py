@@ -13,12 +13,31 @@ class Intermediaire :
         self.distanceP=0.0
         self.angleP=0
         self.obstacles=obstacles
+        self.tmpD=0.0
+        self.tmpA=0.0
+
+
+    def start_time_dist(self):
+        self.tmpD=time.time()
+    def start_time_angle(self):
+        self.tmpA=time.time()
     def get_distance(self):
-        return self.robot.distanceP
+        tmp_act=time.time()
+        delta_time=tmp_act-self.tmpD
+        vitesse_moyenne = (self.robot.vitesse_roue_gauche + self.robot.vitesse_roue_droite) / 2 
+        vitesse_moyenne = vitesse_moyenne / (2 * math.pi * self.robot.rayon_roue)
+        self.distanceP+=vitesse_moyenne *delta_time
+        self.tmpD=time.time()
+        return self.distanceP
 
     def get_angle(self):
-        return self.robot.angleP
-
+        tmp_act=time.time()
+        delta_time=tmp_act-self.tmpA
+        vitesse_angulaire = (self.robot.vitesse_roue_droite - self.robot.vitesse_roue_gauche) / (2 * math.pi * self.robot.distance_roues)
+        self.angleP+= vitesse_angulaire * delta_time
+        self.tmpA=time.time()
+        return self.angleP
+    
     def tourner_gauche(self,vitesse):
         self.robot.set_vitesse(-vitesse,vitesse)
     def tourner_droite(self,vitesse):
@@ -27,8 +46,6 @@ class Intermediaire :
         """Ajuste les vitesses afin que le robot puisse avancer """
         self.robot.set_vitesse(vitesseG,vitesseD)
 
-    def start_time(self):
-        self.tmp=time.time()
 
     def deplacement(self, delta_time):
         """
