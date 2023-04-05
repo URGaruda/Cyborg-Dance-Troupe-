@@ -21,15 +21,15 @@ class Inter_Robot:
         return self.angleP 
     
     def tourner_gauche(self,vitesse):
-        v_ang = (vitesse - (-vitesse)) / (2 * math.pi * constantes.Distance_Roues)
-        self.robot.set_motor_dps(self.robot.MOTOR_LEFT+self.robot.MOTOR_RIGHT,v_ang*57.2958)
+        self.robot.set_motor_dps(self.robot.MOTOR_LEFT,-vitesse)
+        self.robot.set_motor_dps(self.robot.MOTOR_RIGHT,vitesse)
     def tourner_droite(self,vitesse):
-        v_ang = (-vitesse - vitesse) / (2 * math.pi * constantes.Distance_Roues)
-        self.robot.set_motor_dps(self.robot.MOTOR_LEFT+self.robot.MOTOR_RIGHT,v_ang*57.2958)
+        self.robot.set_motor_dps(self.robot.MOTOR_LEFT,vitesse)
+        self.robot.set_motor_dps(self.robot.MOTOR_RIGHT,-vitesse)
     def avancer(self,vitesseG,vitesseD):
         """Ajuste les vitesses afin que le robot puisse avancer """
-        v_ang = (vitesseD - vitesseG) / (2 * math.pi * constantes.Distance_Roues)
-        self.robot.set_motor_dps(self.robot.MOTOR_LEFT+self.robot.MOTOR_RIGHT,v_ang*57.2958)
+        self.robot.set_motor_dps(self.robot.MOTOR_LEFT,vitesseG)
+        self.robot.set_motor_dps(self.robot.MOTOR_RIGHT,vitesseD)
 
     def start_time(self):
         self.tmp=time.time()
