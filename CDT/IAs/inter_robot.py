@@ -40,10 +40,10 @@ class Inter_Robot:
         self.robot.set_motor_dps(self.robot.MOTOR_RIGHT,vitesseD)
 
     def start_time_dist(self):
-        self.robot.offset_motor_encode(self.robot.MOTOR_LEFT+self.robot.MOTOR_RIGHT,self.robot.read_encoders()[0])
+        self.robot.offset_motor_encoder(self.robot.MOTOR_LEFT+self.robot.MOTOR_RIGHT,self.robot.read_encoders()[0])
 
     def start_time_angle(self):
-        self.robot.offset_motor_encode(self.robot.MOTOR_LEFT+self.robot.MOTOR_RIGHT,self.robot.read_encoders()[0])
+        self.robot.offset_motor_encoder(self.robot.MOTOR_LEFT+self.robot.MOTOR_RIGHT,self.robot.read_encoders()[0])
         
     
     

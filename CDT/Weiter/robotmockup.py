@@ -21,6 +21,7 @@ class Robotmockup:
         self.y=constantes.y
         self.dt=0.0 
         self.tmp=0.0
+    
 
 
     def start_time(self):
@@ -35,7 +36,8 @@ class Robotmockup:
     def set_motor_dps(self, port, dps):
         pass
 
-
+    def read_encoders(self):
+        return [1,2,3,4,5]
 
     def get_motor_position(self):
         tmp_act=time.time()
