@@ -19,13 +19,15 @@ class Inter_Robot:
         left_distance = (left_position / 360.0) * self.robot.WHEEL_CIRCUMFERENCE # en mm 
         right_distance = (right_position / 360.0) * self.robot.WHEEL_CIRCUMFERENCE # en mm 
         distance_traveled = (left_distance + right_distance) / 2.0 # distance moyenne 
-        self.distanceP = distance_traveled / 1000.0 # conversion en mètre 
+        self.distanceP += distance_traveled / 1000.0 # conversion en mètre 
+        #print("Distance : ",self.distanceP)
         return self.distanceP 
 
     def get_angle(self):
         position_gauche, position_droite = self.robot.get_motor_position()
         angle = math.radians((position_gauche + position_droite) / 2)
-        self.angleP= angle
+        self.angleP+= angle
+        #print("Angle: ",self.angleP)
         return self.angleP 
     
     def tourner_gauche(self,vitesse):

@@ -13,7 +13,7 @@ class Ia_Tourner:
         self.inter.start_time_angle()
         self.inter.tourner_gauche(self.vitesse)
     def step(self):
-        #print("angle :",self.a_tourner)
+        print("angle :",self.a_tourner)
         self.a_tourner=self.inter.get_angle()
         
         if((self.a_tourner/self.angle)*100>=82.0) and self.limite==False : # à utiliser que si l'affichage est utilisé dans le main 

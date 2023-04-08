@@ -76,7 +76,7 @@ def create_triangle_equilateral(distance):
     main_ia=ia_equi
 
 initiate(0)
-create_line(10)
+create_carre(10)
 main_ia.start()
 inter.start_time_dist()
 inter.start_time_angle()
