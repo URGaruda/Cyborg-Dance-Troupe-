@@ -43,9 +43,11 @@ def create_carre(distance):
     for i in range(7):
         if(i%2==0):
             l_ia.append(ia.IA(inter,distance,constantes.Vitesse) )
+            Intermediaire.get_distance(inter)
             
         else:
             l_ia.append( ia_tourner.Ia_Tourner(inter,90,constantes.Vitesse ))
+            Intermediaire.get_angle(inter)
             
     ia_carre=ia_seq.IA_Seq(l_ia)
     global main_ia
@@ -99,7 +101,8 @@ def create_loop(ia,condition): #en phase de test
     main_ia=loop
 
 initiate(0)
-create_line(100)
+#create_line(100)
+create_carre(100)
 main_ia.start()
 dexter.start_time()
     
