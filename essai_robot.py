@@ -88,3 +88,4 @@ while not main_ia.stop() and not terrain.check_collision():
     terrain.arene_update()
     main_ia.step()
     print("x=",dexter.x,"y=",dexter.y)
+dexter.stop()

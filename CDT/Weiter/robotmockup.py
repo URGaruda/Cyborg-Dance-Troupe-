@@ -24,8 +24,8 @@ class Robotmockup:
     
 
 
-    def start_time(self):
-        self.tmp=time.time()
+    def stop(self):
+        pass
     
     def set_led(self, led, red = 0, green = 0, blue = 0):
         pass
