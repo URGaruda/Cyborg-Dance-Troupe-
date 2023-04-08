@@ -33,6 +33,7 @@ def initiate(nb_obstacle):
 def create_line(distance):
     global ruby
     ruby=ia.IA(inter,distance,constantes.Vitesse)
+    Intermediaire.get_distance(inter)
     global main_ia
     main_ia=ruby
 
@@ -42,8 +43,10 @@ def create_carre(distance):
     for i in range(7):
         if(i%2==0):
             l_ia.append(ia.IA(inter,distance,constantes.Vitesse) )
+            
         else:
             l_ia.append( ia_tourner.Ia_Tourner(inter,90,constantes.Vitesse ))
+            
     ia_carre=ia_seq.IA_Seq(l_ia)
     global main_ia
     main_ia=ia_carre
@@ -96,7 +99,7 @@ def create_loop(ia,condition): #en phase de test
     main_ia=loop
 
 initiate(0)
-create_triangle_equilateral(130)
+create_line(100)
 main_ia.start()
 dexter.start_time()
     
