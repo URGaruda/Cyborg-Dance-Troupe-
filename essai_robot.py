@@ -16,7 +16,6 @@ from CDT.IAs.intermediaire import Intermediaire
 l_obstacle=[]
 dexter=None
 inter=None
-terrain=None
 ruby=None
 l_ia=[]
 main_ia=None
@@ -24,11 +23,9 @@ def initiate(nb_obstacle):
     global l_obstacle
     l_obstacle=[Obstacle(random.uniform(0,Arene.arene_longueur),random.uniform(0,Arene.arene_largeur),random.uniform(2.9,10))for i in range (nb_obstacle) ]
     global dexter
-    dexter=Robotmockup(25,56,60)
+    dexter=Robotmockup()
     global inter
     inter=Inter_Robot(dexter)
-    global terrain
-    terrain=Arene(dexter,l_obstacle)
 
 def create_line(distance):
     global ruby
@@ -81,11 +78,12 @@ def create_triangle_equilateral(distance):
 initiate(0)
 create_line(10)
 main_ia.start()
-dexter.start_time()
-    
-while not main_ia.stop() and not terrain.check_collision():
-    
-    terrain.arene_update()
+inter.start_time_dist()
+inter.start_time_angle()
+
+while not main_ia.stop():
     main_ia.step()
-    print("x=",dexter.x,"y=",dexter.y)
+
+
 dexter.stop()
+print("fin")

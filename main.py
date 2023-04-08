@@ -101,7 +101,6 @@ def create_loop(ia,condition): #en phase de test
     main_ia=loop
 
 initiate(0)
-#create_line(100)
 create_carre(100)
 main_ia.start()
 dexter.start_time()

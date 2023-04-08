@@ -7,7 +7,7 @@ class Robotmockup:
     WHEEL_BASE_CIRCUMFERENCE = WHEEL_BASE_WIDTH * math.pi 
     WHEEL_CIRCUMFERENCE      = WHEEL_DIAMETER   * math.pi
 
-    def __init__(self,x,y,fps=25):
+    def __init__(self,fps=25):
         self.fps=fps
         self.LED_LEFT_EYE = 15
         self.LED_RIGHT_EYE = 22
@@ -17,8 +17,6 @@ class Robotmockup:
         self.MOTOR_LEFT= constantes.Vitesse_Gauche
         self.MOTOR_RIGHT = constantes.Vitesse_Droite
         self.rayon_robot=Robotmockup.WHEEL_BASE_WIDTH/10
-        self.x=constantes.x
-        self.y=constantes.y
         self.dt=0.0 
         self.tmp=0.0
     
@@ -61,7 +59,4 @@ class Robotmockup:
     def get_image(self):
         return 500
     
-    def deplacement(self,dt):
-        self.x=self.x+20*dt+4
-        self.y=self.y+20*dt+4
     
