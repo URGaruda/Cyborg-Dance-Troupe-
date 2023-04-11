@@ -15,3 +15,5 @@ class TestIntermediare(unittest.TestCase):
         self.i.tourner_droite(54)
     def test_avancer(self):
         self.i.avancer(30,50)
+if __name__ == '__main__':
+    unittest.main()       
