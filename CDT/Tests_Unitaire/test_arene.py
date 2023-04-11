@@ -7,4 +7,5 @@ class TestArene(unittest.TestCase):
     def test_ajout_obstacle(self):
         self.a.ajout_obstacles(7)
 
+
     
