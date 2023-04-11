@@ -14,13 +14,4 @@ class TestRobot(unittest.TestCase):
         self.r.senseur_distance([Obstacle(4.0,4.0,5.0),Obstacle(8.0,6.0,2.0)])
 
 if __name__ == '__main__':
-    unittest.main()
-
-
-
-
-
-
-    
-
-        
+    unittest.main()       
