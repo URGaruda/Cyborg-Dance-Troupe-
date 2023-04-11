@@ -1,6 +1,8 @@
 import unittest
 from IAs.intermediaire import Intermediaire
 class TestIntermediare(unittest.TestCase):
+    def setUp(self):
+        self.i=Intermediaire()
     def test_start_time_dist(self):
         self.i.start_time_dist()
     def test_start_time_angle(self):
