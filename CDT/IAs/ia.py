@@ -13,7 +13,7 @@ class IA:
         self.inter.start_time_dist()
         self.inter.avancer(self.vitesse,self.vitesse)
     def step(self):
-        print("parcouru : ",self.parcouru)
+        #print("parcouru : ",self.parcouru)
         self.parcouru=self.inter.get_distance()
         if((self.parcouru/self.distance)*100>=85.0) and self.limite==False :
             self.inter.avancer(self.vitesse/1.3,self.vitesse/1.3)

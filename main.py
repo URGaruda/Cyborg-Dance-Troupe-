@@ -109,14 +109,18 @@ def create_loop(ia,condition): #en phase de test
     global main_ia
     main_ia=loop
 
-initiate(0)
-create_carre(100)
+initiate(20)
+create_triangle_equilateral(50)
 main_ia.start()
 dexter.start_time()
+i=0
     
 while not main_ia.stop() and not terrain.check_collision():
     
     terrain.arene_update()
     main_ia.step()
+    
     aff.updateAffichage(dexter,l_obstacle)
+    
+    i=i+1
 

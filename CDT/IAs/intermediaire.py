@@ -28,7 +28,7 @@ class Intermediaire :
         vitesse_moyenne = vitesse_moyenne / (2 * math.pi * self.robot.rayon_roue)
         self.distanceP+=vitesse_moyenne *delta_time
         self.tmpD=time.time()
-        print("Distance : ",self.distanceP)
+        #print("Distance : ",self.distanceP)
         return self.distanceP
 
     def get_angle(self):
