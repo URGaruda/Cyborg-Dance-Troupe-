@@ -33,7 +33,7 @@ def initiate(nb_obstacle):
 def create_line(distance):
     global ruby
     ruby=ia.IA(inter,distance,constantes.Vitesse)
-    Intermediaire.get_distance(inter)
+  
     global main_ia
     main_ia=ruby
 
@@ -43,11 +43,11 @@ def create_carre(distance):
     for i in range(7):
         if(i%2==0):
             l_ia.append(ia.IA(inter,distance,constantes.Vitesse) )
-            Intermediaire.get_distance(inter)
+    
             
         else:
             l_ia.append( ia_tourner.Ia_Tourner(inter,90,constantes.Vitesse ))
-            Intermediaire.get_angle(inter)
+          
             
     ia_carre=ia_seq.IA_Seq(l_ia)
     global main_ia
@@ -60,16 +60,16 @@ def create_rectangle(longueur,largeur):
         if(i%2==0):
             if(b):
                 l_ia.append(ia.IA(inter,longueur,constantes.Vitesse) )
-                Intermediaire.get_distance(inter)
+               
                 b=False
             else:
                 l_ia.append(ia.IA(inter,largeur,constantes.Vitesse) )
-                Intermediaire.get_distance(inter)
+                
                 b=True
 
         else:
             l_ia.append( ia_tourner.Ia_Tourner(inter,90,constantes.Vitesse ))
-            Intermediaire.get_angle(inter)
+            
     ia_rect=ia_seq.IA_Seq(l_ia)
     global main_ia
     main_ia=ia_rect
@@ -77,14 +77,14 @@ def create_rectangle(longueur,largeur):
 def create_triangle_equilateral(distance):
     global l_ia
     l_ia.append(ia_tourner.Ia_Tourner(inter,60,constantes.Vitesse ))
-    Intermediaire.get_angle(inter)
+
     for i in range(5):
         if(i%2==0):
             l_ia.append(ia.IA(inter,distance,constantes.Vitesse) )
-            Intermediaire.get_distance(inter)
+           
         else:
             l_ia.append( ia_tourner.Ia_Tourner(inter,120,constantes.Vitesse ))
-            Intermediaire.get_angle(inter)
+           
     ia_equi=ia_seq.IA_Seq(l_ia)
     global main_ia
     main_ia=ia_equi
@@ -96,10 +96,10 @@ def create_hexagone(distance):
     for i in range(11):
         if(i%2==0):
             l_ia.append(ia.IA(inter,distance,constantes.Vitesse) )
-            Intermediaire.get_distance(inter)
+            
         else:
             l_ia.append( ia_tourner.Ia_Tourner(inter,60,constantes.Vitesse ))
-            Intermediaire.get_angle(inter)
+            
     ia_equi=ia_seq.IA_Seq(l_ia)
     global main_ia
     main_ia=ia_equi
