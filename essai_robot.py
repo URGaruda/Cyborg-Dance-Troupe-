@@ -4,6 +4,7 @@ import CDT.IAs.ia_tourner as ia_tourner
 import CDT.IAs.ia_seq as ia_seq 
 import CDT.Weiter.constantes as constantes 
 import robot2IN013 as Robot
+import time
 
 dexter=None
 inter=None
@@ -78,14 +79,14 @@ def create_hexagone(distance):
     main_ia=ia_equi
 
 initiate(0)
-create_carre(100)
+create_triangle_equilateral(100)
 main_ia.start()
 inter.start_time_dist()
 inter.start_time_angle()
 
 while not main_ia.stop():
     main_ia.step()
-
+    #time.sleep(0.00003)    
 
 dexter.stop()
 print("fin")

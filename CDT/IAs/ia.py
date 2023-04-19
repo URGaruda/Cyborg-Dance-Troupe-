@@ -20,4 +20,4 @@ class IA:
             self.limite=True
         
     def stop(self):
-        return self.parcouru>=self.distance 
+        return self.parcouru>=self.distance or self.parcouru<=-self.distance
