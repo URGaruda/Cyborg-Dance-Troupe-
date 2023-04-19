@@ -12,7 +12,7 @@ l_ia=[]
 main_ia=None
 def initiate(nb_obstacle):
     global dexter
-    dexter=Robot()
+    dexter=Robot.Robot2IN013()
     global inter
     inter=Inter_Robot(dexter)
 
@@ -78,7 +78,7 @@ def create_hexagone(distance):
     main_ia=ia_equi
 
 initiate(0)
-create_carre(10)
+create_carre(100)
 main_ia.start()
 inter.start_time_dist()
 inter.start_time_angle()
