@@ -37,8 +37,8 @@ class Inter_Robot:
         self.robot.set_motor_dps(self.robot.MOTOR_LEFT,-vitesse/10)
         self.robot.set_motor_dps(self.robot.MOTOR_RIGHT,vitesse/10)
     def tourner_droite(self,vitesse):
-        self.robot.set_motor_dps(self.robot.MOTOR_LEFT,vitesse)
-        self.robot.set_motor_dps(self.robot.MOTOR_RIGHT,-vitesse)
+        self.robot.set_motor_dps(self.robot.MOTOR_LEFT,vitesse/10)
+        self.robot.set_motor_dps(self.robot.MOTOR_RIGHT,-vitesse/10)
     def avancer(self,vitesseG,vitesseD):
         """Ajuste les vitesses afin que le robot puisse avancer """
         self.robot.set_motor_dps(self.robot.MOTOR_LEFT,vitesseG)

@@ -11,7 +11,7 @@ class Ia_Tourner:
         self.inter.angleP=0.0
         self.a_tourner=0.0
         self.inter.start_time_angle()
-        self.inter.tourner_droite(self.vitesse)
+        self.inter.tourner_gauche(self.vitesse)
     def step(self):
         #print("angle :",self.a_tourner)
         self.a_tourner=self.inter.get_angle()
